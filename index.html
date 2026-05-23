@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HYAKUS | Digitale Deals für 12 Monate</title>
+  <meta name="description" content="Digitale 12-Monats-Angebote: AI, Streaming, Kreativ-Tools, VPN und Premium-Abos. Moderne Shop-Demo mit Warenkorb." />
+  <meta name="theme-color" content="#090714" />
+  <style>
+    :root{
+      --bg:#090714;
+      --bg2:#120b25;
+      --card:#171227;
+      --card2:#201739;
+      --text:#fff8ff;
+      --muted:#b8acc9;
+      --line:rgba(255,255,255,.12);
+      --hot:#ff3d81;
+      --hot2:#ff8b3d;
+      --green:#26f195;
+      --blue:#54a7ff;
+      --yellow:#ffe066;
+      --shadow:0 24px 70px rgba(0,0,0,.38);
+      --radius:26px;
+      --max:1220px;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(circle at 20% 0%,rgba(255,61,129,.28),transparent 34%),radial-gradient(circle at 80% 18%,rgba(38,241,149,.19),transparent 30%),linear-gradient(180deg,var(--bg),#05040a 70%);color:var(--text);line-height:1.55;min-height:100vh}
+    body.lock{overflow:hidden}
+    a{color:inherit;text-decoration:none}
+    button,input,textarea,select{font:inherit}
+    .wrap{width:min(var(--max),calc(100% - 34px));margin:0 auto}
+    .topline{background:rgba(255,255,255,.06);border-bottom:1px solid var(--line);backdrop-filter:blur(18px);font-size:14px;color:#f5e9ff}
+    .topline .wrap{display:flex;justify-content:space-between;gap:14px;align-items:center;padding:9px 0;flex-wrap:wrap}
+    .nav{position:sticky;top:0;z-index:40;background:rgba(9,7,20,.77);border-bottom:1px solid var(--line);backdrop-filter:blur(22px)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;height:76px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:950;letter-spacing:.06em}
+    .brand-mark{width:46px;height:46px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,var(--hot),var(--hot2));box-shadow:0 16px 42px rgba(255,61,129,.34);font-size:20px}
+    .brand small{display:block;color:var(--muted);font-size:12px;letter-spacing:0;font-weight:700;margin-top:-2px}
+    .nav-links{display:flex;gap:18px;color:#e8dff0;font-weight:800;font-size:14px;align-items:center}
+    .nav-links a:hover{color:#fff}
+    .nav-bonus{border:1px solid rgba(38,241,149,.42);background:linear-gradient(135deg,rgba(38,241,149,.22),rgba(255,224,102,.14));color:#eafff5;border-radius:999px;padding:9px 13px;font-weight:950;cursor:pointer;box-shadow:0 10px 26px rgba(38,241,149,.12)}
+    .nav-bonus:hover{transform:translateY(-1px);border-color:rgba(38,241,149,.75);color:#fff}
+    .cart-btn,.btn{border:0;border-radius:999px;background:linear-gradient(135deg,var(--hot),var(--hot2));color:#fff;padding:13px 18px;font-weight:950;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 16px 38px rgba(255,61,129,.26)}
+    .btn:hover,.cart-btn:hover{transform:translateY(-1px)}
+    .cart-btn{background:#fff;color:#100b1f;box-shadow:none}
+    .cart-count{min-width:22px;height:22px;border-radius:999px;background:var(--hot);color:white;font-size:12px;display:grid;place-items:center;padding:0 6px}
+    .hero{padding:82px 0 60px;position:relative;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:42px;align-items:center}
+    .eyebrow{display:inline-flex;gap:9px;align-items:center;padding:9px 13px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.07);color:#f7ddff;font-weight:900;font-size:13px;letter-spacing:.04em;text-transform:uppercase}
+    h1{font-size:clamp(42px,7vw,86px);line-height:.95;margin:20px 0 18px;letter-spacing:-.07em;max-width:820px}
+    .gradient-text{background:linear-gradient(120deg,#fff,#ffb3d1 43%,#ffe066 67%,#78ffd0);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{font-size:clamp(18px,2.1vw,22px);color:#ded2ea;max-width:730px;margin:0 0 28px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+    .btn.secondary{background:rgba(255,255,255,.08);border:1px solid var(--line);box-shadow:none;color:#fff}
+    .trust-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:760px}
+    .trust{border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.07);padding:14px 15px;color:#f5edff;font-weight:850}
+    .hero-card{border:1px solid var(--line);border-radius:34px;background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.04));box-shadow:var(--shadow);padding:24px;position:relative;overflow:hidden}
+    .hero-card:before{content:"";position:absolute;inset:-80px -70px auto auto;width:220px;height:220px;background:radial-gradient(circle,rgba(255,224,102,.45),transparent 65%);filter:blur(2px)}
+    .deal-stack{display:grid;gap:14px;position:relative}
+    .mini-deal{display:flex;align-items:center;gap:15px;border:1px solid var(--line);border-radius:22px;background:rgba(7,5,15,.58);padding:14px;box-shadow:0 15px 30px rgba(0,0,0,.22)}
+    .mini-art{width:74px;height:74px;border-radius:18px;display:grid;place-items:center;font-weight:1000;font-size:22px;background:var(--g);box-shadow:inset 0 0 0 1px rgba(255,255,255,.18),0 16px 32px rgba(0,0,0,.28)}
+    .mini-deal b{font-size:16px}.mini-deal span{display:block;color:var(--muted);font-size:13px;margin-top:3px}.mini-price{margin-left:auto;text-align:right;color:#fff;font-size:20px;font-weight:1000}.mini-price small{display:block;color:var(--muted);text-decoration:line-through;font-size:13px;font-weight:800}
+    section{padding:76px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:30px}.kicker{color:#ff9ec3;text-transform:uppercase;letter-spacing:.12em;font-weight:1000;font-size:13px}.section-head h2,.center h2{font-size:clamp(32px,5vw,56px);line-height:1;margin:8px 0 0;letter-spacing:-.045em}.section-copy{color:var(--muted);max-width:540px;margin:0;font-weight:650}
+    .toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+    .crunchy-highlight{margin:0 0 24px;border:1px solid rgba(255,76,22,.34);border-radius:28px;background:linear-gradient(135deg,rgba(255,76,22,.18),rgba(255,208,90,.08) 46%,rgba(255,255,255,.045));box-shadow:0 18px 46px rgba(0,0,0,.2);padding:22px;display:grid;grid-template-columns:1fr 1.25fr;gap:20px;align-items:center;overflow:hidden;position:relative}
+    .crunchy-highlight:before{content:"";position:absolute;inset:auto -70px -90px auto;width:240px;height:240px;background:radial-gradient(circle,rgba(255,76,22,.42),transparent 65%);pointer-events:none}
+    .crunchy-copy{position:relative;z-index:1}.crunchy-copy h3{font-size:clamp(24px,3vw,36px);line-height:1;margin:8px 0 10px;letter-spacing:-.035em}.crunchy-copy p{color:#f2ddea;font-weight:700;margin:0 0 14px}.crunchy-actions{display:flex;gap:10px;flex-wrap:wrap}.crunchy-options{position:relative;z-index:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.crunchy-option{border:1px solid rgba(255,255,255,.14);border-radius:22px;background:rgba(7,5,15,.5);padding:16px}.crunchy-option strong{display:block;font-size:18px}.crunchy-option span{display:block;color:var(--muted);font-weight:750;margin:5px 0 10px}.crunchy-option b{font-size:27px;color:#ffb07c}
+    .filters{display:flex;gap:10px;flex-wrap:wrap}.filter{border:1px solid var(--line);background:rgba(255,255,255,.07);color:#fff;border-radius:999px;padding:10px 14px;font-weight:850;cursor:pointer}.filter.active{background:#fff;color:#100b1f}.search{min-width:240px;flex:0 1 330px;border:1px solid var(--line);background:rgba(255,255,255,.07);color:#fff;border-radius:999px;padding:12px 15px;outline:none}.search::placeholder{color:#9e92ad}
+    .products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.product{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.045));box-shadow:0 18px 46px rgba(0,0,0,.23);transition:.2s;display:flex;flex-direction:column}.product:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.24)}
+    .sale{position:absolute;top:14px;left:14px;z-index:2;background:linear-gradient(135deg,var(--hot),var(--hot2));color:#fff;border-radius:12px;padding:8px 10px;font-weight:1000;box-shadow:0 12px 30px rgba(255,61,129,.32)}
+    .art{height:228px;display:grid;place-items:center;text-align:center;padding:20px;background:var(--g);position:relative;overflow:hidden}.art:before{content:"";position:absolute;inset:-40%;background:radial-gradient(circle at 50% 50%,rgba(255,255,255,.55),transparent 7%),radial-gradient(circle at 20% 30%,rgba(255,255,255,.34),transparent 9%),radial-gradient(circle at 70% 65%,rgba(255,255,255,.25),transparent 10%);mix-blend-mode:screen;opacity:.75}.art:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(0,0,0,.3))}.art-content{position:relative;z-index:1}.duration{font-size:22px;font-weight:1000;text-shadow:0 2px 12px rgba(0,0,0,.5)}.art-name{font-size:30px;line-height:1.02;font-weight:1000;text-shadow:0 3px 16px rgba(0,0,0,.45);margin-top:4px}.icon{margin:18px auto 0;width:70px;height:70px;border-radius:22px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.3);display:grid;place-items:center;font-size:30px;box-shadow:0 18px 36px rgba(0,0,0,.24)}
+    .product-body{padding:18px;display:flex;flex-direction:column;gap:12px;flex:1}.product h3{font-size:20px;line-height:1.18;margin:0;min-height:48px}.price-row{display:flex;align-items:baseline;gap:10px}.price{color:#ff7ca9;font-size:22px;font-weight:1000}.old{color:#8f8397;text-decoration:line-through;font-weight:850}.tag{display:inline-flex;align-self:flex-start;border:1px solid var(--line);border-radius:999px;padding:5px 9px;color:#decfe8;background:rgba(255,255,255,.06);font-weight:800;font-size:12px}.product-actions{display:grid;grid-template-columns:1fr auto;gap:10px;margin-top:auto}.ghost{border:1px solid var(--line);background:rgba(255,255,255,.06);color:#fff;border-radius:16px;font-weight:900;cursor:pointer;padding:11px}.add{border:0;background:#fff;color:#100b1f;border-radius:16px;font-weight:1000;cursor:pointer;padding:11px 14px}
+    .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.info-card{border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.065);padding:24px}.info-card h3{margin:0 0 8px;font-size:22px}.info-card p{margin:0;color:var(--muted);font-weight:650}
+    .cart-drawer{position:fixed;inset:0;z-index:100;pointer-events:none}.cart-drawer.open{pointer-events:auto}.overlay{position:absolute;inset:0;background:rgba(0,0,0,.62);opacity:0;transition:.2s}.cart-drawer.open .overlay{opacity:1}.drawer{position:absolute;right:0;top:0;height:100%;width:min(480px,100%);background:#100b1f;border-left:1px solid var(--line);transform:translateX(100%);transition:.24s ease;display:flex;flex-direction:column}.cart-drawer.open .drawer{transform:none}.drawer-head{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:20px}.drawer-head h2{margin:0;font-size:28px}.close{border:1px solid var(--line);background:rgba(255,255,255,.06);color:#fff;border-radius:50%;width:42px;height:42px;cursor:pointer;font-size:20px}.cart-items{padding:18px;overflow:auto;display:grid;gap:12px;flex:1}.cart-item{display:grid;grid-template-columns:58px 1fr auto;gap:12px;align-items:center;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.055);padding:11px}.cart-thumb{width:58px;height:58px;border-radius:14px;background:var(--g);display:grid;place-items:center;font-weight:1000}.cart-item b{display:block;line-height:1.18}.cart-item small{color:var(--muted);font-weight:800}.qty{display:flex;align-items:center;gap:8px}.qty button{width:28px;height:28px;border-radius:9px;border:1px solid var(--line);background:rgba(255,255,255,.08);color:#fff;cursor:pointer}.drawer-foot{border-top:1px solid var(--line);padding:18px;display:grid;gap:12px}.total{display:flex;justify-content:space-between;font-size:23px;font-weight:1000}.checkout{display:grid;gap:10px}.checkout a,.checkout button{width:100%}.hint{font-size:13px;color:var(--muted);margin:0}.empty{text-align:center;color:var(--muted);padding:30px}
+    .modal{position:fixed;inset:0;z-index:110;display:none;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.modal:before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.68);backdrop-filter:blur(10px)}.modal-card{position:relative;width:min(990px,100%);max-height:88vh;overflow:auto;border:1px solid var(--line);border-radius:30px;background:#100b1f;box-shadow:var(--shadow);display:grid;grid-template-columns:.9fr 1.1fr}.modal-art{min-height:440px;background:var(--g);display:grid;place-items:center;text-align:center;padding:34px;position:relative;overflow:hidden}.modal-art:before{content:"";position:absolute;inset:-30%;background:radial-gradient(circle,rgba(255,255,255,.5),transparent 7%),radial-gradient(circle at 80% 70%,rgba(255,255,255,.24),transparent 12%);opacity:.8}.modal-body{padding:34px}.modal-body h2{font-size:clamp(34px,5vw,62px);line-height:1;margin:0 0 12px;letter-spacing:-.05em}.modal-price{font-size:38px;font-weight:1000;color:#ff7ca9}.modal-price span{font-size:30px;color:#8f8397;text-decoration:line-through;margin-left:8px}.modal-desc{color:#e5d9ef;font-weight:650}.modal-body ul{padding-left:20px;color:#ded2ea}.modal-body li{margin:8px 0}.notice{border:1px solid rgba(255,224,102,.28);background:rgba(255,224,102,.09);border-radius:18px;padding:14px;color:#fff1bd;font-weight:750;margin:18px 0}.modal-close{position:absolute;right:18px;top:18px;z-index:2}
+
+    .buy-notice-card{position:relative;width:min(560px,100%);border:1px solid var(--line);border-radius:30px;background:#100b1f;box-shadow:var(--shadow);padding:34px;text-align:left}
+    .buy-notice-icon{width:64px;height:64px;border-radius:20px;display:grid;place-items:center;background:linear-gradient(135deg,var(--hot),var(--hot2));box-shadow:0 16px 38px rgba(255,61,129,.26);font-size:30px;margin-bottom:18px}
+    .buy-notice-card h2{font-size:clamp(30px,4vw,44px);line-height:1;margin:0 0 12px;letter-spacing:-.04em}
+    .buy-notice-card p{color:#e5d9ef;font-weight:700;margin:0 0 14px}
+    .buy-notice-card .notice{margin:16px 0 20px}
+    .buy-notice-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .buy-notice-actions .btn,.buy-notice-actions button{flex:1 1 190px}
+    footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);background:rgba(0,0,0,.18)}.foot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}.foot a{text-decoration:underline;text-underline-offset:3px}
+    @media (max-width:1060px){.products{grid-template-columns:repeat(3,1fr)}.hero-grid{grid-template-columns:1fr}.hero-card{max-width:760px}.info-grid{grid-template-columns:1fr}}
+    @media (max-width:760px){.nav-links{display:none}.products{grid-template-columns:repeat(2,1fr)}.trust-row{grid-template-columns:1fr}.section-head{display:block}.section-copy{margin-top:12px}.modal-card{grid-template-columns:1fr}.modal-art{min-height:280px}.hero{padding-top:52px}.art{height:210px}.topline .wrap{display:block}.topline span{display:block;margin:2px 0}.crunchy-highlight{grid-template-columns:1fr}.crunchy-options{grid-template-columns:1fr}}
+    @media (max-width:520px){.products{grid-template-columns:1fr}.product h3{min-height:auto}.nav-inner{height:66px}.brand small{display:none}.brand-mark{width:42px;height:42px}.hero-actions .btn{width:100%}.toolbar{display:grid}.search{min-width:0;width:100%}.art{height:230px}.foot{display:block}.foot span{display:block;margin:6px 0}}
+  </style>
+</head>
+<body>
+  <div class="topline"><div class="wrap"><span>Digitale 12-Monats-Angebote mit schneller Lieferung</span><span>Aktivierungsinformationen in der Regel innerhalb von 24 Stunden per E-Mail</span></div></div>
+  <nav class="nav"><div class="wrap nav-inner"><a class="brand" href="#top"><span class="brand-mark">H</span><span>HYAKUS<small>Premium Deals</small></span></a><div class="nav-links"><button class="nav-bonus" type="button" onclick="openProduct('robinhood')">50€ Gratis verdienen</button><a href="#produkte">Produkte</a><a href="#ablauf">Ablauf</a><a href="#faq">Hinweise</a></div><a class="cart-btn" href="#produkte">Jetzt kaufen</a></div></nav>
+  <main id="top">
+    <header class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">⚡ 12 Monate Premium</span>
+          <h1>Digitale Deals, die sofort auffallen.</h1>
+          <p class="lead">Entdecke starke 12-Monats-Angebote für Kreativität, KI, Streaming, Lernen und Sicherheit. Modern, übersichtlich und mit klaren Informationen zur Aktivierung nach dem Kauf.</p>
+          <div class="hero-actions"><a class="btn" href="#produkte">Deals ansehen</a><a class="btn secondary" href="#ablauf">So funktioniert es</a></div>
+          <div class="trust-row"><div class="trust">✓ Lieferung per E-Mail</div><div class="trust">✓ 12 Monate Laufzeit</div><div class="trust">✓ Klare Produktinfos</div></div>
+        </div>
+        <aside class="hero-card" aria-label="Top Deals">
+          <div class="deal-stack">
+            <div class="mini-deal" style="--g:linear-gradient(135deg,#2b0505,#ff1c1c 54%,#ffab4a)"><div class="mini-art">YT</div><div><b>12 Monate YouTube Premium</b><span>Premium-Streaming ohne Umwege</span></div><div class="mini-price">49,99 €<small>129,99 €</small></div></div>
+            <div class="mini-deal" style="--g:linear-gradient(135deg,#052810,#1ed760 52%,#e4ff62)"><div class="mini-art">SP</div><div><b>12 Monate Spotify Premium</b><span>Musik & Podcasts für dein Jahr</span></div><div class="mini-price">59,99 €<small>159,99 €</small></div></div>
+            <div class="mini-deal" style="--g:linear-gradient(135deg,#300606,#ff4c16 52%,#ffd05a)"><div class="mini-art">CR</div><div><b>Crunchyroll Account oder Profil</b><span>12 Monate Anime-Zugang ab 19,99 €</span></div><div class="mini-price">ab 19,99 €<small>99,99 €</small></div></div>
+          </div>
+        </aside>
+      </div>
+    </header>
+    <section id="produkte">
+      <div class="wrap">
+        <div class="section-head"><div><div class="kicker">Shop</div><h2>Alle Deals auf einen Blick.</h2></div><p class="section-copy">Wähle dein Produkt, lies die wichtigsten Hinweise und klicke auf „Jetzt kaufen“. Die Bezahlung läuft anschließend sicher über den jeweiligen SumUp-Zahlungslink.</p></div>
+        <div class="toolbar"><div class="filters" id="filters"><button class="filter active" data-cat="Alle">Alle</button><button class="filter" data-cat="KI">KI</button><button class="filter" data-cat="Streaming">Streaming</button><button class="filter" data-cat="Kreativ">Kreativ</button><button class="filter" data-cat="Sicherheit">Sicherheit</button><button class="filter" data-cat="Lernen">Lernen</button><button class="filter" data-cat="Bonus">Bonus</button></div><input class="search" id="search" placeholder="Produkt suchen ..." /></div>
+        <div class="crunchy-highlight">
+          <div class="crunchy-copy"><div class="kicker">Neu bei Crunchyroll</div><h3>Wähle zwischen eigenem Account und günstiger Profil-Option.</h3><p>So wirkt das Angebot klarer: Wer volle Kontrolle möchte, nimmt den Account. Wer sparen möchte, wählt ein eigenes Profil für 12 Monate.</p><div class="crunchy-actions"><button class="btn" type="button" onclick="openProduct('crunchyroll')">Account ansehen</button><button class="btn secondary" type="button" onclick="openProduct('crunchyroll-profil')">Profil ansehen</button></div></div>
+          <div class="crunchy-options"><div class="crunchy-option"><strong>Eigener Account</strong><span>12 Monate Mega-Fan mit eigenem Zugang.</span><b>29,99 €</b></div><div class="crunchy-option"><strong>Eigenes Profil</strong><span>Kein eigener Account, aber eigenes Profil für 12 Monate.</span><b>19,99 €</b></div></div>
+        </div>
+        <div class="products" id="products"></div>
+      </div>
+    </section>
+    <section id="ablauf">
+      <div class="wrap">
+        <div class="section-head"><div><div class="kicker">So läuft es ab</div><h2>Schnell bestellen, entspannt aktivieren.</h2></div><p class="section-copy">Alle Produkte sind digitale 12-Monats-Angebote. Nach der Bestellung erhältst du die weiteren Informationen zur Aktivierung per E-Mail.</p></div>
+        <div class="info-grid">
+          <article class="info-card"><h3>1. Produkt auswählen</h3><p>Wähle den gewünschten Deal aus und prüfe Laufzeit, Preis und Produkthinweise.</p></article>
+          <article class="info-card"><h3>2. Bestellung senden</h3><p>Klicke auf „Jetzt kaufen“ und bezahle bequem über den jeweiligen SumUp-Zahlungslink.</p></article>
+          <article class="info-card"><h3>3. Aktivierung erhalten</h3><p>Nach erfolgreicher Zahlung erhältst du alle weiteren Informationen zur Aktivierung per E-Mail. Die Lieferung erfolgt in der Regel innerhalb von 24 Stunden.</p></article>
+        </div>
+      </div>
+    </section>
+    <section id="faq">
+      <div class="wrap">
+        <div class="section-head"><div><div class="kicker">Wichtige Hinweise</div><h2>Transparent vor dem Kauf.</h2></div><p class="section-copy">Bitte beachte je nach Produkt die Angaben zu Laufzeit, Aktivierung und Nutzung. Der genaue Ablauf wird nach dem Kauf verständlich erklärt.</p></div>
+        <div class="info-grid">
+          <article class="info-card"><h3>Lieferzeit</h3><p>Die Lieferung beziehungsweise Aktivierungsinformation erfolgt in der Regel innerhalb von 24 Stunden per E-Mail.</p></article>
+          <article class="info-card"><h3>Laufzeit</h3><p>Alle Angebote sind auf 12 Monate ausgelegt. Beachte die jeweiligen Produkthinweise zur Nutzung.</p></article>
+          <article class="info-card"><h3>Einmalzahlung</h3><p>Die Angebote sind als Einmalzahlung für 12 Monate formuliert und nicht als monatliches Abo dargestellt.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap foot"><span>© 2026 HYAKUS Premium Deals</span><span><a href="#">Impressum</a> · <a href="#">Datenschutz</a> · <a href="#">AGB</a></span></div></footer>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="overlay" id="cartOverlay"></div>
+    <div class="drawer">
+      <div class="drawer-head"><h2>Warenkorb</h2><button class="close" id="closeCart" aria-label="Warenkorb schließen">×</button></div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="drawer-foot">
+        <div class="total"><span>Gesamt</span><span id="cartTotal">0,00 €</span></div>
+        <div class="checkout"><a class="btn" id="mailOrder" href="#">Bestellung per E-Mail senden</a></div>
+        <p class="hint">Hinweis: Für Direktzahlungen werden die jeweiligen SumUp-Zahlungslinks der Produkte verwendet.</p>
+      </div>
+    </div>
+  </aside>
+
+  <div class="modal" id="productModal" aria-hidden="true">
+    <div class="modal-card" id="modalCard"></div>
+  </div>
+
+  <div class="modal" id="buyNoticeModal" aria-hidden="true">
+    <div class="buy-notice-card" role="dialog" aria-modal="true" aria-labelledby="buyNoticeTitle">
+      <button class="close modal-close" id="closeBuyNotice" type="button" aria-label="Hinweis schließen">×</button>
+      <div class="buy-notice-icon">✉️</div>
+      <h2 id="buyNoticeTitle">Wichtig vor der Zahlung</h2>
+      <p>Bitte trage auf der SumUp-Zahlungsseite deine E-Mail-Adresse bei „Anmerkung für den Händler“ ein.</p>
+      <div class="notice">Nur mit dieser E-Mail-Adresse können wir dir die Aktivierungsinformationen nach der Zahlung zuverlässig zusenden.</div>
+      <div class="buy-notice-actions">
+        <button class="btn secondary" type="button" onclick="closeBuyNotice()">Abbrechen</button>
+        <a class="btn" id="continuePayment" href="#" target="_blank" rel="noopener">Verstanden, weiter zur Zahlung</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const products = [
+      {id:'youtube', name:'12 Monate YouTube Premium', cat:'Streaming', price:49.99, old:129.99, code:'YT', gradient:'linear-gradient(135deg,#2b0505,#ff1c1c 54%,#ffab4a)', pay:'https://pay.sumup.com/b2c/QDBUNEZV', short:'YouTube Premium für werbefreies Streaming und mehr Komfort.', desc:'Gönn dir 12 Monate YouTube Premium für dein Entertainment-Jahr.', bullets:['12 Monate YouTube Premium.','Aktivierungsinformationen erhältst du nach dem Kauf per E-Mail.','Die Lieferung erfolgt in der Regel innerhalb von 24 Stunden.','Einmalzahlung für 12 Monate, kein monatliches Abo.']},
+      {id:'spotify', name:'12 Monate Spotify Premium', cat:'Streaming', price:59.99, old:159.99, code:'SP', gradient:'linear-gradient(135deg,#052810,#1ed760 52%,#e4ff62)', pay:'https://pay.sumup.com/b2c/QSHXGJ9T', short:'Musik, Podcasts und Premium-Feeling für 12 Monate.', desc:'Gönn dir 12 Monate Spotify Premium und genieße Musik ohne Umwege.', bullets:['12 Monate Spotify Premium.','Aktivierungsinformationen erhältst du nach dem Kauf per E-Mail.','Die Lieferung erfolgt in der Regel innerhalb von 24 Stunden.','Einmalzahlung für 12 Monate, kein monatliches Abo.']},
+      {id:'crunchyroll', name:'12 Monate Crunchyroll Account', displayName:'Crunchyroll Account', cat:'Streaming', price:29.99, old:99.99, code:'CR', gradient:'linear-gradient(135deg,#300606,#ff4c16 52%,#ffd05a)', pay:'https://pay.sumup.com/b2c/QH70LVX4', short:'Eigener Crunchyroll-Zugang für 12 Monate.', desc:'Die volle Crunchyroll-Option: 12 Monate Mega-Fan als eigener Account.', bullets:['12 Monate Crunchyroll Premium Mega-Fan als eigener Account.','Du erhältst einen eigenen Zugang für die Nutzung über 12 Monate.','Aktivierungsinformationen erhältst du nach dem Kauf per E-Mail.','Die Lieferung erfolgt in der Regel innerhalb von 24 Stunden.','Einmalzahlung für 12 Monate, kein monatliches Abo.']},
+      {id:'crunchyroll-profil', name:'12 Monate Crunchyroll Profil', displayName:'Crunchyroll Profil', duration:'12 Monate Profil', cat:'Streaming', price:19.99, old:69.99, code:'CR+', gradient:'linear-gradient(135deg,#261005,#ff7a18 52%,#ffe066)', requestOnly:true, short:'Günstiger Zugang zu einem eigenen Profil, aber kein eigener Account.', desc:'Die günstigere Crunchyroll-Option: Zugang für 12 Monate zu einem eigenen Profil innerhalb eines bestehenden Accounts.', bullets:['12 Monate Zugang zu einem eigenen Crunchyroll-Profil.','Kein eigener Account: Du erhältst Zugang zu einem separaten Profil innerhalb eines bestehenden Accounts.','Ideal, wenn du sparen möchtest und keinen eigenen Account brauchst.','Aktivierungsinformationen erhältst du nach der Bestellung per E-Mail.','Die Lieferung erfolgt in der Regel innerhalb von 24 Stunden.','Einmalzahlung für 12 Monate, kein monatliches Abo.']},
+      {id:'prime', name:'12 Monate Prime Video', cat:'Streaming', price:39.99, old:89.99, code:'PV', gradient:'linear-gradient(135deg,#07184c,#1192ff 55%,#75e9ff)', pay:'https://pay.sumup.com/b2c/QNVGHW0Q', short:'Streaming für Filme, Serien und entspannte Abende.', desc:'Gönn dir 12 Monate Prime Video und genieße Streaming für dein Jahr.', bullets:['12 Monate Prime Video.','Aktivierungsinformationen erhältst du nach dem Kauf per E-Mail.','Die Lieferung erfolgt in der Regel innerhalb von 24 Stunden.','Einmalzahlung für 12 Monate, kein monatliches Abo.']},
+      {id:'adobe', name:'12 Monate Adobe Creative Cloud', cat:'Kreativ', price:69.99, old:199.99, code:'CC', gradient:'linear-gradient(135deg,#270605,#ff230d 45%,#ffb000)', pay:'https://pay.sumup.com/b2c/QBO8K3YH', short:'Alle wichtigen Kreativ-Apps für dein nächstes Projektjahr.', desc:'Gönn dir 12 Monate Adobe Creative Cloud und arbeite kreativ mit starken Tools für Design, Video, Foto und mehr.', bullets:['Enthält bekannte Adobe-Apps wie Photoshop, Illustrator, Premiere Pro, After Effects, Lightroom und InDesign.','Cloud-Speicher: 85 GB.','KI-Generierungsguthaben: 500 Credits pro Monat für Generative Fill, Text-zu-Bild und weitere Funktionen.','3D-Apps enthalten: Substance 3D Painter, Sampler, Designer und Stager.','Einmalzahlung für 12 Monate, kein monatliches Abo.']},
+      {id:'duolingo', name:'12 Monate Duolingo Max', cat:'Lernen', price:69.99, old:179.99, code:'DUO', gradient:'linear-gradient(135deg,#173c04,#8eff00 55%,#e6ff6e)', pay:'https://pay.sumup.com/b2c/QFWMHIKK', short:'Lerne Sprachen smarter, motivierter und mit Premium-Funktionen.', desc:'Lerne Sprachen wie ein Weltmeister mit 12 Monaten Duolingo Max.', bullets:['12 Monate Duolingo Max.','Aktivierungsinformationen erhältst du nach dem Kauf per E-Mail.','Die Aktivierung wird verständlich erklärt.','Die Lieferung erfolgt in der Regel innerhalb von 24 Stunden.']},
+      {id:'norton', name:'12 Monate Norton VPN', cat:'Sicherheit', price:24.99, old:49.99, code:'VPN', gradient:'linear-gradient(135deg,#06133e,#006cff 55%,#62e5ff)', pay:'https://pay.sumup.com/b2c/QGUDPT9Z', short:'Sicherer surfen mit VPN- und Schutzfunktionen.', desc:'Schütze dich online mit 12 Monaten Norton VPN und Antivirus.', bullets:['Nach dem Kauf erhältst du die Aktivierungsinformationen per E-Mail.','Aktiviere Norton mit den erhaltenen Informationen.','12 Monate Nutzung für VPN und Antivirus.','Klare digitale Lieferung, in der Regel innerhalb von 24 Stunden.']},
+      {id:'chatgpt', name:'12 Monate ChatGPT Pro', cat:'KI', price:99.99, old:null, code:'AI', gradient:'linear-gradient(135deg,#06260f,#00e66f 52%,#a7ffcb)', pay:'https://pay.sumup.com/b2c/QCOYHNY3', short:'Boost für KI, Ideen, Texte und produktives Arbeiten.', desc:'Booste deine KI-Erfahrung auf das nächste Level mit 12 Monaten ChatGPT Pro.', bullets:['Du erhältst nach dem Kauf alle weiteren Informationen zur Aktivierung per E-Mail.','Die Aktivierung wird verständlich erklärt.','Die Nutzung ist auf 12 Monate ausgelegt.','Regulärer Vergleichspreis laut Angebot: ca. 200 € pro Monat.']},
+      {id:'perplexity', name:'12 Monate Perplexity AI Pro', cat:'KI', price:69.99, old:199.99, code:'P', gradient:'linear-gradient(135deg,#170736,#853cff 52%,#4af3ff)', pay:'https://pay.sumup.com/b2c/QMINIL9W', short:'Recherche, Antworten und AI-Power für dein Produktivitätsjahr.', desc:'Nutze 12 Monate Perplexity AI Pro für schnelle Recherche, smarte Antworten und produktives Arbeiten.', bullets:['12 Monate Perplexity AI Pro.','Aktivierungsinformationen erhältst du nach dem Kauf per E-Mail.','Die Nutzungshinweise werden verständlich erklärt.','Einmalzahlung für 12 Monate.']},
+      {id:'robinhood', name:'50€ Gratis?', displayName:'Robinhood App', duration:'Bonus Aktion', cat:'Bonus', price:0, priceLabel:'50€ Gratis?', old:null, code:'RH', gradient:'linear-gradient(135deg,#052b18,#00c805 52%,#d8ff5f)', short:'Werbung: Erhalte 50€ Gratis bei Registrierung über meinen Ref-Link.', desc:'Erhalte 50€ Gratis, wenn du dich über meinen Ref-Link bei Robinhood registrierst.', ref:true, link:'https://join.robinhood.com/eu_crypto/jonnyl-d0e34c0/', bullets:['Klicke auf den Link und trage deine E-Mail ein.','Lade die Robinhood App im Playstore herunter.','Registriere dich in der App mit derselben E-Mail wie aus Schritt 1.','Verifiziere dein Profil.','Lade 50€ via Echtzeitüberweisung auf. Du kannst diese anschließend wieder abbuchen lassen.','Du erhältst automatisch deine 50€ Prämie.','Hinweis: Es gelten die aktuellen Bedingungen von Robinhood. Keine Anlageberatung.']}
+    ];
+    const activationText = 'Nach erfolgreicher Zahlung erhältst du alle weiteren Informationen zur Aktivierung per E-Mail. Die Lieferung erfolgt in der Regel innerhalb von 24 Stunden. Bitte beachte die Hinweise zur Laufzeit und Nutzung im jeweiligen Produkt.';
+    const format = n => n.toLocaleString('de-DE',{style:'currency',currency:'EUR'});
+    let cart = JSON.parse(localStorage.getItem('hyakusCart') || '{}');
+    let currentCat = 'Alle';
+    const productsEl = document.getElementById('products');
+    const searchEl = document.getElementById('search');
+    const cartDrawer = document.getElementById('cartDrawer');
+    const modal = document.getElementById('productModal');
+    function renderProducts(){
+      const q = searchEl.value.trim().toLowerCase();
+      const visible = products.filter(p => (currentCat === 'Alle' || p.cat === currentCat) && (p.name + ' ' + (p.displayName || '')).toLowerCase().includes(q));
+      productsEl.innerHTML = visible.map(p => `
+        <article class="product" data-id="${p.id}">
+          ${p.old ? '<div class="sale">%</div>' : ''}
+          <div class="art" style="--g:${p.gradient}"><div class="art-content"><div class="duration">${p.duration || '12 Monate'}</div><div class="art-name">${p.displayName || p.name.replace('12 Monate ','')}</div><div class="icon">${p.code}</div></div></div>
+          <div class="product-body"><span class="tag">${p.cat}</span><h3>${p.name}</h3><div class="price-row"><span class="price">${p.priceLabel || format(p.price)}</span>${p.old ? `<span class="old">${format(p.old)}</span>` : ''}</div><p style="color:var(--muted);margin:0;font-weight:650">${p.short}</p><div class="product-actions">${p.ref ? `<button class="ghost" style="grid-column:1 / -1" onclick="openProduct('${p.id}')">Details & Ref-Link</button>` : `<button class="ghost" onclick="openProduct('${p.id}')">Details</button><button class="add" type="button" onclick="startPurchase('${p.id}')">${p.requestOnly ? 'Anfragen' : 'Kaufen'}</button>`}</div></div>
+        </article>
+      `).join('') || '<p class="empty">Keine Produkte gefunden.</p>';
+    }
+    function addToCart(id){cart[id]=(cart[id]||0)+1;saveCart();openCart();}
+    function changeQty(id,delta){cart[id]=(cart[id]||0)+delta;if(cart[id]<=0) delete cart[id];saveCart();renderCart();}
+    function saveCart(){localStorage.setItem('hyakusCart',JSON.stringify(cart));renderCartCount();}
+    function renderCartCount(){const cc=document.getElementById('cartCount'); if(cc) cc.textContent=Object.values(cart).reduce((a,b)=>a+b,0);}
+    function cartLines(){return Object.entries(cart).map(([id,qty])=>({product:products.find(p=>p.id===id),qty})).filter(x=>x.product && !x.product.ref)}
+    function renderCart(){
+      const lines = cartLines();
+      const items = document.getElementById('cartItems');
+      if(!lines.length){items.innerHTML='<p class="empty">Dein Warenkorb ist leer.</p>';document.getElementById('cartTotal').textContent=format(0);updateCheckout();return;}
+      items.innerHTML = lines.map(({product:p,qty})=>`<div class="cart-item"><div class="cart-thumb" style="--g:${p.gradient}">${p.code}</div><div><b>${p.name}</b><small>${format(p.price)} pro Stück</small></div><div class="qty"><button onclick="changeQty('${p.id}',-1)">−</button><strong>${qty}</strong><button onclick="changeQty('${p.id}',1)">+</button></div></div>`).join('');
+      document.getElementById('cartTotal').textContent=format(lines.reduce((sum,{product:p,qty})=>sum+p.price*qty,0));
+      updateCheckout();
+    }
+    function updateCheckout(){
+      const lines = cartLines();
+      const total = lines.reduce((sum,{product:p,qty})=>sum+p.price*qty,0);
+      const text = lines.length ? `Hallo, ich möchte folgende Produkte bestellen:%0A%0A${lines.map(({product:p,qty})=>`- ${qty}x ${p.name} (${format(p.price)})`).join('%0A')}%0A%0AGesamt: ${format(total)}%0A%0ABitte sende mir die weiteren Informationen zur Aktivierung per E-Mail.` : 'Hallo, ich interessiere mich für die digitalen Angebote.';
+      document.getElementById('mailOrder').href = `mailto:bestellung@example.de?subject=Bestellung HYAKUS Shop&body=${text}`;
+    }
+    function productOrderMailto(p){
+      const subject = `Bestellung HYAKUS Shop - ${p.name}`;
+      const body = `Hallo,
+
+ich möchte folgendes Produkt bestellen:
+
+- ${p.name} (${p.priceLabel || format(p.price)})
+
+Bitte sende mir die weiteren Informationen zur Aktivierung und Zahlung per E-Mail.
+
+Vielen Dank.`;
+      return `mailto:bestellung@example.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+    function startPurchase(id){
+      const p = products.find(x=>x.id===id); if(!p) return;
+      if(p.requestOnly || !p.pay){
+        window.location.href = productOrderMailto(p);
+        return;
+      }
+      showBuyNotice(p.pay);
+    }
+    const buyNoticeModal = document.getElementById('buyNoticeModal');
+    function showBuyNotice(payUrl){
+      const continuePayment = document.getElementById('continuePayment');
+      continuePayment.href = payUrl;
+      buyNoticeModal.classList.add('open');
+      buyNoticeModal.setAttribute('aria-hidden','false');
+      document.body.classList.add('lock');
+    }
+    function closeBuyNotice(){
+      buyNoticeModal.classList.remove('open');
+      buyNoticeModal.setAttribute('aria-hidden','true');
+      if(!modal.classList.contains('open') && !cartDrawer.classList.contains('open')){
+        document.body.classList.remove('lock');
+      }
+    }
+    function openCart(){cartDrawer.classList.add('open');cartDrawer.setAttribute('aria-hidden','false');document.body.classList.add('lock');renderCart();}
+    function closeCart(){cartDrawer.classList.remove('open');cartDrawer.setAttribute('aria-hidden','true');document.body.classList.remove('lock');}
+    function openProduct(id){
+      const p = products.find(x=>x.id===id); if(!p) return;
+      document.getElementById('modalCard').innerHTML = `<button class="close modal-close" onclick="closeProduct()">×</button><div class="modal-art" style="--g:${p.gradient}"><div class="art-content"><div class="duration">${p.duration || '12 Monate'}</div><div class="art-name">${p.displayName || p.name.replace('12 Monate ','')}</div><div class="icon">${p.code}</div></div></div><div class="modal-body"><span class="tag">${p.cat}</span><h2>${p.name}</h2><div class="modal-price">${p.priceLabel || format(p.price)}${p.old ? `<span>${format(p.old)}</span>` : ''}</div><p class="modal-desc">${p.desc}</p>${p.ref ? '' : `<div class="notice">${activationText}</div>`}<ul>${p.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>${p.ref ? `<a class="btn" href="${p.link}" target="_blank" rel="noopener">Ref-Link öffnen</a>` : `<button class="btn" type="button" onclick="startPurchase('${p.id}')">${p.requestOnly ? 'Profil anfragen' : 'Jetzt kaufen'}</button>`}</div>`;
+      modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.classList.add('lock');
+    }
+    function closeProduct(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.classList.remove('lock');}
+    document.getElementById('openCart')?.addEventListener('click',openCart);
+    document.getElementById('heroCart')?.addEventListener('click',openCart);
+    document.getElementById('closeCart').addEventListener('click',closeCart);
+    document.getElementById('cartOverlay').addEventListener('click',closeCart);
+    modal.addEventListener('click',e=>{if(e.target===modal) closeProduct()});
+    document.getElementById('closeBuyNotice').addEventListener('click',closeBuyNotice);
+    document.getElementById('continuePayment').addEventListener('click',closeBuyNotice);
+    buyNoticeModal.addEventListener('click',e=>{if(e.target===buyNoticeModal) closeBuyNotice()});
+    document.getElementById('filters').addEventListener('click',e=>{if(e.target.matches('.filter')){document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));e.target.classList.add('active');currentCat=e.target.dataset.cat;renderProducts();}});
+    searchEl.addEventListener('input',renderProducts);
+    renderProducts();renderCartCount();updateCheckout();
+  </script>
+</body>
+</html>
