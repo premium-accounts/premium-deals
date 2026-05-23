@@ -73,6 +73,14 @@
     .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.info-card{border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.065);padding:24px}.info-card h3{margin:0 0 8px;font-size:22px}.info-card p{margin:0;color:var(--muted);font-weight:650}
     .cart-drawer{position:fixed;inset:0;z-index:100;pointer-events:none}.cart-drawer.open{pointer-events:auto}.overlay{position:absolute;inset:0;background:rgba(0,0,0,.62);opacity:0;transition:.2s}.cart-drawer.open .overlay{opacity:1}.drawer{position:absolute;right:0;top:0;height:100%;width:min(480px,100%);background:#100b1f;border-left:1px solid var(--line);transform:translateX(100%);transition:.24s ease;display:flex;flex-direction:column}.cart-drawer.open .drawer{transform:none}.drawer-head{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:20px}.drawer-head h2{margin:0;font-size:28px}.close{border:1px solid var(--line);background:rgba(255,255,255,.06);color:#fff;border-radius:50%;width:42px;height:42px;cursor:pointer;font-size:20px}.cart-items{padding:18px;overflow:auto;display:grid;gap:12px;flex:1}.cart-item{display:grid;grid-template-columns:58px 1fr auto;gap:12px;align-items:center;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.055);padding:11px}.cart-thumb{width:58px;height:58px;border-radius:14px;background:var(--g);display:grid;place-items:center;font-weight:1000}.cart-item b{display:block;line-height:1.18}.cart-item small{color:var(--muted);font-weight:800}.qty{display:flex;align-items:center;gap:8px}.qty button{width:28px;height:28px;border-radius:9px;border:1px solid var(--line);background:rgba(255,255,255,.08);color:#fff;cursor:pointer}.drawer-foot{border-top:1px solid var(--line);padding:18px;display:grid;gap:12px}.total{display:flex;justify-content:space-between;font-size:23px;font-weight:1000}.checkout{display:grid;gap:10px}.checkout a,.checkout button{width:100%}.hint{font-size:13px;color:var(--muted);margin:0}.empty{text-align:center;color:var(--muted);padding:30px}
     .modal{position:fixed;inset:0;z-index:110;display:none;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.modal:before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.68);backdrop-filter:blur(10px)}.modal-card{position:relative;width:min(990px,100%);max-height:88vh;overflow:auto;border:1px solid var(--line);border-radius:30px;background:#100b1f;box-shadow:var(--shadow);display:grid;grid-template-columns:.9fr 1.1fr}.modal-art{min-height:440px;background:var(--g);display:grid;place-items:center;text-align:center;padding:34px;position:relative;overflow:hidden}.modal-art:before{content:"";position:absolute;inset:-30%;background:radial-gradient(circle,rgba(255,255,255,.5),transparent 7%),radial-gradient(circle at 80% 70%,rgba(255,255,255,.24),transparent 12%);opacity:.8}.modal-body{padding:34px}.modal-body h2{font-size:clamp(34px,5vw,62px);line-height:1;margin:0 0 12px;letter-spacing:-.05em}.modal-price{font-size:38px;font-weight:1000;color:#ff7ca9}.modal-price span{font-size:30px;color:#8f8397;text-decoration:line-through;margin-left:8px}.modal-desc{color:#e5d9ef;font-weight:650}.modal-body ul{padding-left:20px;color:#ded2ea}.modal-body li{margin:8px 0}.notice{border:1px solid rgba(255,224,102,.28);background:rgba(255,224,102,.09);border-radius:18px;padding:14px;color:#fff1bd;font-weight:750;margin:18px 0}.modal-close{position:absolute;right:18px;top:18px;z-index:2}
+
+    .buy-notice-card{position:relative;width:min(560px,100%);border:1px solid var(--line);border-radius:30px;background:#100b1f;box-shadow:var(--shadow);padding:34px;text-align:left}
+    .buy-notice-icon{width:64px;height:64px;border-radius:20px;display:grid;place-items:center;background:linear-gradient(135deg,var(--hot),var(--hot2));box-shadow:0 16px 38px rgba(255,61,129,.26);font-size:30px;margin-bottom:18px}
+    .buy-notice-card h2{font-size:clamp(30px,4vw,44px);line-height:1;margin:0 0 12px;letter-spacing:-.04em}
+    .buy-notice-card p{color:#e5d9ef;font-weight:700;margin:0 0 14px}
+    .buy-notice-card .notice{margin:16px 0 20px}
+    .buy-notice-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .buy-notice-actions .btn,.buy-notice-actions button{flex:1 1 190px}
     footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);background:rgba(0,0,0,.18)}.foot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}.foot a{text-decoration:underline;text-underline-offset:3px}
     @media (max-width:1060px){.products{grid-template-columns:repeat(3,1fr)}.hero-grid{grid-template-columns:1fr}.hero-card{max-width:760px}.info-grid{grid-template-columns:1fr}}
     @media (max-width:760px){.nav-links{display:none}.products{grid-template-columns:repeat(2,1fr)}.trust-row{grid-template-columns:1fr}.section-head{display:block}.section-copy{margin-top:12px}.modal-card{grid-template-columns:1fr}.modal-art{min-height:280px}.hero{padding-top:52px}.art{height:210px}.topline .wrap{display:block}.topline span{display:block;margin:2px 0}}
@@ -148,6 +156,20 @@
     <div class="modal-card" id="modalCard"></div>
   </div>
 
+  <div class="modal" id="buyNoticeModal" aria-hidden="true">
+    <div class="buy-notice-card" role="dialog" aria-modal="true" aria-labelledby="buyNoticeTitle">
+      <button class="close modal-close" id="closeBuyNotice" type="button" aria-label="Hinweis schließen">×</button>
+      <div class="buy-notice-icon">✉️</div>
+      <h2 id="buyNoticeTitle">Wichtig vor der Zahlung</h2>
+      <p>Bitte trage auf der SumUp-Zahlungsseite deine E-Mail-Adresse im Kontaktfeld ein.</p>
+      <div class="notice">Nur mit dieser Kontakt-E-Mail können wir dir die Aktivierungsinformationen nach der Zahlung zuverlässig zusenden.</div>
+      <div class="buy-notice-actions">
+        <button class="btn secondary" type="button" onclick="closeBuyNotice()">Abbrechen</button>
+        <a class="btn" id="continuePayment" href="#" target="_blank" rel="noopener">Verstanden, weiter zur Zahlung</a>
+      </div>
+    </div>
+  </div>
+
   <script>
     const products = [
       {id:'youtube', name:'12 Monate YouTube Premium', cat:'Streaming', price:49.99, old:129.99, code:'YT', gradient:'linear-gradient(135deg,#2b0505,#ff1c1c 54%,#ffab4a)', pay:'https://pay.sumup.com/b2c/QDBUNEZV', short:'YouTube Premium für werbefreies Streaming und mehr Komfort.', desc:'Gönn dir 12 Monate YouTube Premium für dein Entertainment-Jahr.', bullets:['12 Monate YouTube Premium.','Aktivierungsinformationen erhältst du nach dem Kauf per E-Mail.','Die Lieferung erfolgt in der Regel innerhalb von 24 Stunden.','Einmalzahlung für 12 Monate, kein monatliches Abo.']},
@@ -176,7 +198,7 @@
         <article class="product" data-id="${p.id}">
           ${p.old ? '<div class="sale">%</div>' : ''}
           <div class="art" style="--g:${p.gradient}"><div class="art-content"><div class="duration">${p.duration || '12 Monate'}</div><div class="art-name">${p.displayName || p.name.replace('12 Monate ','')}</div><div class="icon">${p.code}</div></div></div>
-          <div class="product-body"><span class="tag">${p.cat}</span><h3>${p.name}</h3><div class="price-row"><span class="price">${p.priceLabel || format(p.price)}</span>${p.old ? `<span class="old">${format(p.old)}</span>` : ''}</div><p style="color:var(--muted);margin:0;font-weight:650">${p.short}</p><div class="product-actions">${p.ref ? `<button class="ghost" style="grid-column:1 / -1" onclick="openProduct('${p.id}')">Details & Ref-Link</button>` : `<button class="ghost" onclick="openProduct('${p.id}')">Details</button><a class="add" href="${p.pay}" target="_blank" rel="noopener">Kaufen</a>`}</div></div>
+          <div class="product-body"><span class="tag">${p.cat}</span><h3>${p.name}</h3><div class="price-row"><span class="price">${p.priceLabel || format(p.price)}</span>${p.old ? `<span class="old">${format(p.old)}</span>` : ''}</div><p style="color:var(--muted);margin:0;font-weight:650">${p.short}</p><div class="product-actions">${p.ref ? `<button class="ghost" style="grid-column:1 / -1" onclick="openProduct('${p.id}')">Details & Ref-Link</button>` : `<button class="ghost" onclick="openProduct('${p.id}')">Details</button><button class="add" type="button" onclick="showBuyNotice('${p.pay}')">Kaufen</button>`}</div></div>
         </article>
       `).join('') || '<p class="empty">Keine Produkte gefunden.</p>';
     }
@@ -199,11 +221,26 @@
       const text = lines.length ? `Hallo, ich möchte folgende Produkte bestellen:%0A%0A${lines.map(({product:p,qty})=>`- ${qty}x ${p.name} (${format(p.price)})`).join('%0A')}%0A%0AGesamt: ${format(total)}%0A%0ABitte sende mir die weiteren Informationen zur Aktivierung per E-Mail.` : 'Hallo, ich interessiere mich für die digitalen Angebote.';
       document.getElementById('mailOrder').href = `mailto:bestellung@example.de?subject=Bestellung HYAKUS Shop&body=${text}`;
     }
+    const buyNoticeModal = document.getElementById('buyNoticeModal');
+    function showBuyNotice(payUrl){
+      const continuePayment = document.getElementById('continuePayment');
+      continuePayment.href = payUrl;
+      buyNoticeModal.classList.add('open');
+      buyNoticeModal.setAttribute('aria-hidden','false');
+      document.body.classList.add('lock');
+    }
+    function closeBuyNotice(){
+      buyNoticeModal.classList.remove('open');
+      buyNoticeModal.setAttribute('aria-hidden','true');
+      if(!modal.classList.contains('open') && !cartDrawer.classList.contains('open')){
+        document.body.classList.remove('lock');
+      }
+    }
     function openCart(){cartDrawer.classList.add('open');cartDrawer.setAttribute('aria-hidden','false');document.body.classList.add('lock');renderCart();}
     function closeCart(){cartDrawer.classList.remove('open');cartDrawer.setAttribute('aria-hidden','true');document.body.classList.remove('lock');}
     function openProduct(id){
       const p = products.find(x=>x.id===id); if(!p) return;
-      document.getElementById('modalCard').innerHTML = `<button class="close modal-close" onclick="closeProduct()">×</button><div class="modal-art" style="--g:${p.gradient}"><div class="art-content"><div class="duration">${p.duration || '12 Monate'}</div><div class="art-name">${p.displayName || p.name.replace('12 Monate ','')}</div><div class="icon">${p.code}</div></div></div><div class="modal-body"><span class="tag">${p.cat}</span><h2>${p.name}</h2><div class="modal-price">${p.priceLabel || format(p.price)}${p.old ? `<span>${format(p.old)}</span>` : ''}</div><p class="modal-desc">${p.desc}</p>${p.ref ? '' : `<div class="notice">${activationText}</div>`}<ul>${p.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>${p.ref ? `<a class="btn" href="${p.link}" target="_blank" rel="noopener">Ref-Link öffnen</a>` : `<a class="btn" href="${p.pay}" target="_blank" rel="noopener">Jetzt kaufen</a>`}</div>`;
+      document.getElementById('modalCard').innerHTML = `<button class="close modal-close" onclick="closeProduct()">×</button><div class="modal-art" style="--g:${p.gradient}"><div class="art-content"><div class="duration">${p.duration || '12 Monate'}</div><div class="art-name">${p.displayName || p.name.replace('12 Monate ','')}</div><div class="icon">${p.code}</div></div></div><div class="modal-body"><span class="tag">${p.cat}</span><h2>${p.name}</h2><div class="modal-price">${p.priceLabel || format(p.price)}${p.old ? `<span>${format(p.old)}</span>` : ''}</div><p class="modal-desc">${p.desc}</p>${p.ref ? '' : `<div class="notice">${activationText}</div>`}<ul>${p.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>${p.ref ? `<a class="btn" href="${p.link}" target="_blank" rel="noopener">Ref-Link öffnen</a>` : `<button class="btn" type="button" onclick="showBuyNotice('${p.pay}')">Jetzt kaufen</button>`}</div>`;
       modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.classList.add('lock');
     }
     function closeProduct(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.classList.remove('lock');}
@@ -212,6 +249,9 @@
     document.getElementById('closeCart').addEventListener('click',closeCart);
     document.getElementById('cartOverlay').addEventListener('click',closeCart);
     modal.addEventListener('click',e=>{if(e.target===modal) closeProduct()});
+    document.getElementById('closeBuyNotice').addEventListener('click',closeBuyNotice);
+    document.getElementById('continuePayment').addEventListener('click',closeBuyNotice);
+    buyNoticeModal.addEventListener('click',e=>{if(e.target===buyNoticeModal) closeBuyNotice()});
     document.getElementById('filters').addEventListener('click',e=>{if(e.target.matches('.filter')){document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));e.target.classList.add('active');currentCat=e.target.dataset.cat;renderProducts();}});
     searchEl.addEventListener('input',renderProducts);
     renderProducts();renderCartCount();updateCheckout();
