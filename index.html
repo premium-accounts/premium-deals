@@ -43,6 +43,11 @@
     .nav-links a:hover{color:#fff}
     .nav-bonus{border:1px solid rgba(38,241,149,.42);background:linear-gradient(135deg,rgba(38,241,149,.22),rgba(255,224,102,.14));color:#eafff5;border-radius:999px;padding:9px 13px;font-weight:950;cursor:pointer;box-shadow:0 10px 26px rgba(38,241,149,.12)}
     .nav-bonus:hover{transform:translateY(-1px);border-color:rgba(38,241,149,.75);color:#fff}
+
+    .language-switch{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--line);background:rgba(255,255,255,.07);border-radius:999px;padding:4px;flex-shrink:0}
+    .lang-btn{border:0;background:transparent;color:#e8dff0;border-radius:999px;padding:8px 10px;font-weight:1000;cursor:pointer;line-height:1}
+    .lang-btn.active{background:#fff;color:#100b1f}
+    .lang-btn:focus-visible{outline:2px solid var(--green);outline-offset:2px}
     .cart-btn,.btn{border:0;border-radius:999px;background:linear-gradient(135deg,var(--hot),var(--hot2));color:#fff;padding:13px 18px;font-weight:950;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 16px 38px rgba(255,61,129,.26)}
     .btn:hover,.cart-btn:hover{transform:translateY(-1px)}
     .cart-btn{background:#fff;color:#100b1f;box-shadow:none}
@@ -91,70 +96,70 @@
   </style>
 </head>
 <body>
-  <div class="topline"><div class="wrap"><span>Digitale 12-Monats-Angebote mit schneller Lieferung</span><span>Aktivierungsinformationen in der Regel innerhalb von 24 Stunden per E-Mail</span></div></div>
-  <nav class="nav"><div class="wrap nav-inner"><a class="brand" href="#top"><span class="brand-mark">H</span><span>HYAKUS<small>Premium Deals</small></span></a><div class="nav-links"><button class="nav-bonus" type="button" onclick="openProduct('robinhood')">50€ Gratis verdienen</button><a href="#produkte">Produkte</a><a href="#ablauf">Ablauf</a><a href="#faq">Hinweise</a></div><a class="cart-btn" href="#produkte">Jetzt kaufen</a></div></nav>
+  <div class="topline"><div class="wrap"><span data-i18n="topline.delivery">Digitale 12-Monats-Angebote mit schneller Lieferung</span><span data-i18n="topline.activation">Aktivierungsinformationen in der Regel innerhalb von 24 Stunden per E-Mail</span></div></div>
+  <nav class="nav"><div class="wrap nav-inner"><a class="brand" href="#top"><span class="brand-mark">H</span><span>HYAKUS<small data-i18n="brand.subtitle">Premium Deals</small></span></a><div class="nav-links"><button class="nav-bonus" type="button" onclick="openProduct('robinhood')" data-i18n="nav.bonus">50€ Gratis verdienen</button><a href="#produkte" data-i18n="nav.products">Produkte</a><a href="#ablauf" data-i18n="nav.process">Ablauf</a><a href="#faq" data-i18n="nav.notes">Hinweise</a></div><div class="language-switch" aria-label="Sprache auswählen"><button class="lang-btn active" type="button" data-lang="de" aria-pressed="true">DE</button><button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button></div><a class="cart-btn" href="#produkte" data-i18n="nav.buyNow">Jetzt kaufen</a></div></nav>
   <main id="top">
     <header class="hero">
       <div class="wrap hero-grid">
         <div>
-          <span class="eyebrow">⚡ 12 Monate Premium</span>
-          <h1>Digitale Deals, die sofort auffallen.</h1>
-          <p class="lead">Entdecke starke 12-Monats-Angebote für Kreativität, KI, Streaming, Lernen und Sicherheit. Modern, übersichtlich und mit klaren Informationen zur Aktivierung nach dem Kauf.</p>
-          <div class="hero-actions"><a class="btn" href="#produkte">Deals ansehen</a><a class="btn secondary" href="#ablauf">So funktioniert es</a></div>
-          <div class="trust-row"><div class="trust">✓ Lieferung per E-Mail</div><div class="trust">✓ 12 Monate Laufzeit</div><div class="trust">✓ Klare Produktinfos</div></div>
+          <span class="eyebrow" data-i18n="hero.eyebrow">⚡ 12 Monate Premium</span>
+          <h1 data-i18n="hero.title">Digitale Deals, die sofort auffallen.</h1>
+          <p class="lead" data-i18n="hero.lead">Entdecke starke 12-Monats-Angebote für Kreativität, KI, Streaming, Lernen und Sicherheit. Modern, übersichtlich und mit klaren Informationen zur Aktivierung nach dem Kauf.</p>
+          <div class="hero-actions"><a class="btn" href="#produkte" data-i18n="hero.viewDeals">Deals ansehen</a><a class="btn secondary" href="#ablauf" data-i18n="hero.howItWorks">So funktioniert es</a></div>
+          <div class="trust-row"><div class="trust" data-i18n="hero.trustEmail">✓ Lieferung per E-Mail</div><div class="trust" data-i18n="hero.trustDuration">✓ 12 Monate Laufzeit</div><div class="trust" data-i18n="hero.trustInfo">✓ Klare Produktinfos</div></div>
         </div>
         <aside class="hero-card" aria-label="Top Deals">
           <div class="deal-stack">
-            <div class="mini-deal" style="--g:linear-gradient(135deg,#2b0505,#ff1c1c 54%,#ffab4a)"><div class="mini-art">YT</div><div><b>12 Monate YouTube Premium</b><span>Premium-Streaming ohne Umwege</span></div><div class="mini-price">49,99 €<small>129,99 €</small></div></div>
-            <div class="mini-deal" style="--g:linear-gradient(135deg,#052810,#1ed760 52%,#e4ff62)"><div class="mini-art">SP</div><div><b>12 Monate Spotify Premium</b><span>Musik & Podcasts für dein Jahr</span></div><div class="mini-price">59,99 €<small>159,99 €</small></div></div>
-            <div class="mini-deal" style="--g:linear-gradient(135deg,#300606,#ff4c16 52%,#ffd05a)"><div class="mini-art">CR</div><div><b>Crunchyroll Account oder Profil</b><span>12 Monate Anime-Zugang ab 19,99 €</span></div><div class="mini-price">ab 19,99 €<small>99,99 €</small></div></div>
+            <div class="mini-deal" style="--g:linear-gradient(135deg,#2b0505,#ff1c1c 54%,#ffab4a)"><div class="mini-art">YT</div><div><b data-i18n="heroDeal.youtubeTitle">12 Monate YouTube Premium</b><span data-i18n="heroDeal.youtubeText">Premium-Streaming ohne Umwege</span></div><div class="mini-price">49,99 €<small>129,99 €</small></div></div>
+            <div class="mini-deal" style="--g:linear-gradient(135deg,#052810,#1ed760 52%,#e4ff62)"><div class="mini-art">SP</div><div><b data-i18n="heroDeal.spotifyTitle">12 Monate Spotify Premium</b><span data-i18n="heroDeal.spotifyText">Musik & Podcasts für dein Jahr</span></div><div class="mini-price">59,99 €<small>159,99 €</small></div></div>
+            <div class="mini-deal" style="--g:linear-gradient(135deg,#300606,#ff4c16 52%,#ffd05a)"><div class="mini-art">CR</div><div><b data-i18n="heroDeal.crunchyTitle">Crunchyroll Account oder Profil</b><span data-i18n="heroDeal.crunchyText">12 Monate Anime-Zugang ab 19,99 €</span></div><div class="mini-price" data-i18n="heroDeal.crunchyPrice">ab 19,99 €<small>99,99 €</small></div></div>
           </div>
         </aside>
       </div>
     </header>
     <section id="produkte">
       <div class="wrap">
-        <div class="section-head"><div><div class="kicker">Shop</div><h2>Alle Deals auf einen Blick.</h2></div><p class="section-copy">Wähle dein Produkt, lies die wichtigsten Hinweise und klicke auf „Jetzt kaufen“. Die Bezahlung läuft anschließend sicher über den jeweiligen SumUp-Zahlungslink.</p></div>
-        <div class="toolbar"><div class="filters" id="filters"><button class="filter active" data-cat="Alle">Alle</button><button class="filter" data-cat="KI">KI</button><button class="filter" data-cat="Streaming">Streaming</button><button class="filter" data-cat="Kreativ">Kreativ</button><button class="filter" data-cat="Sicherheit">Sicherheit</button><button class="filter" data-cat="Lernen">Lernen</button><button class="filter" data-cat="Bonus">Bonus</button></div><input class="search" id="search" placeholder="Produkt suchen ..." /></div>
+        <div class="section-head"><div><div class="kicker" data-i18n="shop.kicker">Shop</div><h2 data-i18n="shop.title">Alle Deals auf einen Blick.</h2></div><p class="section-copy" data-i18n="shop.copy">Wähle dein Produkt, lies die wichtigsten Hinweise und klicke auf „Jetzt kaufen“. Die Bezahlung läuft anschließend sicher über den jeweiligen SumUp-Zahlungslink.</p></div>
+        <div class="toolbar"><div class="filters" id="filters"><button class="filter active" data-cat="Alle" data-i18n="categories.Alle">Alle</button><button class="filter" data-cat="KI" data-i18n="categories.KI">KI</button><button class="filter" data-cat="Streaming" data-i18n="categories.Streaming">Streaming</button><button class="filter" data-cat="Kreativ" data-i18n="categories.Kreativ">Kreativ</button><button class="filter" data-cat="Sicherheit" data-i18n="categories.Sicherheit">Sicherheit</button><button class="filter" data-cat="Lernen" data-i18n="categories.Lernen">Lernen</button><button class="filter" data-cat="Bonus" data-i18n="categories.Bonus">Bonus</button></div><input class="search" id="search" placeholder="Produkt suchen ..." data-i18n-placeholder="shop.searchPlaceholder" /></div>
         <div class="crunchy-highlight">
-          <div class="crunchy-copy"><div class="kicker">Neu bei Crunchyroll</div><h3>Wähle zwischen eigenem Account und günstiger Profil-Option.</h3><p>So wirkt das Angebot klarer: Wer volle Kontrolle möchte, nimmt den Account. Wer sparen möchte, wählt ein eigenes Profil für 12 Monate.</p><div class="crunchy-actions"><button class="btn" type="button" onclick="openProduct('crunchyroll')">Account ansehen</button><button class="btn secondary" type="button" onclick="openProduct('crunchyroll-profil')">Profil ansehen</button></div></div>
-          <div class="crunchy-options"><div class="crunchy-option"><strong>Eigener Account</strong><span>12 Monate Mega-Fan mit eigenem Zugang.</span><b>29,99 €</b></div><div class="crunchy-option"><strong>Eigenes Profil</strong><span>Kein eigener Account, aber eigenes Profil für 12 Monate.</span><b>19,99 €</b></div></div>
+          <div class="crunchy-copy"><div class="kicker" data-i18n="crunchy.kicker">Neu bei Crunchyroll</div><h3 data-i18n="crunchy.title">Wähle zwischen eigenem Account und günstiger Profil-Option.</h3><p data-i18n="crunchy.copy">So wirkt das Angebot klarer: Wer volle Kontrolle möchte, nimmt den Account. Wer sparen möchte, wählt ein eigenes Profil für 12 Monate.</p><div class="crunchy-actions"><button class="btn" type="button" onclick="openProduct('crunchyroll')" data-i18n="crunchy.accountButton">Account ansehen</button><button class="btn secondary" type="button" onclick="openProduct('crunchyroll-profil')" data-i18n="crunchy.profileButton">Profil ansehen</button></div></div>
+          <div class="crunchy-options"><div class="crunchy-option"><strong data-i18n="crunchy.accountTitle">Eigener Account</strong><span data-i18n="crunchy.accountText">12 Monate Mega-Fan mit eigenem Zugang.</span><b>29,99 €</b></div><div class="crunchy-option"><strong data-i18n="crunchy.profileTitle">Eigenes Profil</strong><span data-i18n="crunchy.profileText">Kein eigener Account, aber eigenes Profil für 12 Monate.</span><b>19,99 €</b></div></div>
         </div>
         <div class="products" id="products"></div>
       </div>
     </section>
     <section id="ablauf">
       <div class="wrap">
-        <div class="section-head"><div><div class="kicker">So läuft es ab</div><h2>Schnell bestellen, entspannt aktivieren.</h2></div><p class="section-copy">Alle Produkte sind digitale 12-Monats-Angebote. Nach der Bestellung erhältst du die weiteren Informationen zur Aktivierung per E-Mail.</p></div>
+        <div class="section-head"><div><div class="kicker" data-i18n="process.kicker">So läuft es ab</div><h2 data-i18n="process.title">Schnell bestellen, entspannt aktivieren.</h2></div><p class="section-copy" data-i18n="process.copy">Alle Produkte sind digitale 12-Monats-Angebote. Nach der Bestellung erhältst du die weiteren Informationen zur Aktivierung per E-Mail.</p></div>
         <div class="info-grid">
-          <article class="info-card"><h3>1. Produkt auswählen</h3><p>Wähle den gewünschten Deal aus und prüfe Laufzeit, Preis und Produkthinweise.</p></article>
-          <article class="info-card"><h3>2. Bestellung senden</h3><p>Klicke auf „Jetzt kaufen“ und bezahle bequem über den jeweiligen SumUp-Zahlungslink.</p></article>
-          <article class="info-card"><h3>3. Aktivierung erhalten</h3><p>Nach erfolgreicher Zahlung erhältst du alle weiteren Informationen zur Aktivierung per E-Mail. Die Lieferung erfolgt in der Regel innerhalb von 24 Stunden.</p></article>
+          <article class="info-card"><h3 data-i18n="process.step1Title">1. Produkt auswählen</h3><p data-i18n="process.step1Text">Wähle den gewünschten Deal aus und prüfe Laufzeit, Preis und Produkthinweise.</p></article>
+          <article class="info-card"><h3 data-i18n="process.step2Title">2. Bestellung senden</h3><p data-i18n="process.step2Text">Klicke auf „Jetzt kaufen“ und bezahle bequem über den jeweiligen SumUp-Zahlungslink.</p></article>
+          <article class="info-card"><h3 data-i18n="process.step3Title">3. Aktivierung erhalten</h3><p data-i18n="process.step3Text">Nach erfolgreicher Zahlung erhältst du alle weiteren Informationen zur Aktivierung per E-Mail. Die Lieferung erfolgt in der Regel innerhalb von 24 Stunden.</p></article>
         </div>
       </div>
     </section>
     <section id="faq">
       <div class="wrap">
-        <div class="section-head"><div><div class="kicker">Wichtige Hinweise</div><h2>Transparent vor dem Kauf.</h2></div><p class="section-copy">Bitte beachte je nach Produkt die Angaben zu Laufzeit, Aktivierung und Nutzung. Der genaue Ablauf wird nach dem Kauf verständlich erklärt.</p></div>
+        <div class="section-head"><div><div class="kicker" data-i18n="notes.kicker">Wichtige Hinweise</div><h2 data-i18n="notes.title">Transparent vor dem Kauf.</h2></div><p class="section-copy" data-i18n="notes.copy">Bitte beachte je nach Produkt die Angaben zu Laufzeit, Aktivierung und Nutzung. Der genaue Ablauf wird nach dem Kauf verständlich erklärt.</p></div>
         <div class="info-grid">
-          <article class="info-card"><h3>Lieferzeit</h3><p>Die Lieferung beziehungsweise Aktivierungsinformation erfolgt in der Regel innerhalb von 24 Stunden per E-Mail.</p></article>
-          <article class="info-card"><h3>Laufzeit</h3><p>Alle Angebote sind auf 12 Monate ausgelegt. Beachte die jeweiligen Produkthinweise zur Nutzung.</p></article>
-          <article class="info-card"><h3>Einmalzahlung</h3><p>Die Angebote sind als Einmalzahlung für 12 Monate formuliert und nicht als monatliches Abo dargestellt.</p></article>
+          <article class="info-card"><h3 data-i18n="notes.deliveryTitle">Lieferzeit</h3><p data-i18n="notes.deliveryText">Die Lieferung beziehungsweise Aktivierungsinformation erfolgt in der Regel innerhalb von 24 Stunden per E-Mail.</p></article>
+          <article class="info-card"><h3 data-i18n="notes.durationTitle">Laufzeit</h3><p data-i18n="notes.durationText">Alle Angebote sind auf 12 Monate ausgelegt. Beachte die jeweiligen Produkthinweise zur Nutzung.</p></article>
+          <article class="info-card"><h3 data-i18n="notes.paymentTitle">Einmalzahlung</h3><p data-i18n="notes.paymentText">Die Angebote sind als Einmalzahlung für 12 Monate formuliert und nicht als monatliches Abo dargestellt.</p></article>
         </div>
       </div>
     </section>
   </main>
-  <footer><div class="wrap foot"><span>© 2026 HYAKUS Premium Deals</span><span><a href="#">Impressum</a> · <a href="#">Datenschutz</a> · <a href="#">AGB</a></span></div></footer>
+  <footer><div class="wrap foot"><span data-i18n="footer.copy">© 2026 HYAKUS Premium Deals</span><span><a href="#" data-i18n="footer.legal">Impressum</a> · <a href="#" data-i18n="footer.privacy">Datenschutz</a> · <a href="#" data-i18n="footer.terms">AGB</a></span></div></footer>
 
   <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
     <div class="overlay" id="cartOverlay"></div>
     <div class="drawer">
-      <div class="drawer-head"><h2>Warenkorb</h2><button class="close" id="closeCart" aria-label="Warenkorb schließen">×</button></div>
+      <div class="drawer-head"><h2 data-i18n="cart.title">Warenkorb</h2><button class="close" id="closeCart" aria-label="Warenkorb schließen" data-i18n-aria-label="cart.close">×</button></div>
       <div class="cart-items" id="cartItems"></div>
       <div class="drawer-foot">
-        <div class="total"><span>Gesamt</span><span id="cartTotal">0,00 €</span></div>
-        <div class="checkout"><a class="btn" id="mailOrder" href="#">Bestellung per E-Mail senden</a></div>
-        <p class="hint">Hinweis: Für Direktzahlungen werden die jeweiligen SumUp-Zahlungslinks der Produkte verwendet.</p>
+        <div class="total"><span data-i18n="cart.total">Gesamt</span><span id="cartTotal">0,00 €</span></div>
+        <div class="checkout"><a class="btn" id="mailOrder" href="#" data-i18n="cart.mailOrder">Bestellung per E-Mail senden</a></div>
+        <p class="hint" data-i18n="cart.hint">Hinweis: Für Direktzahlungen werden die jeweiligen SumUp-Zahlungslinks der Produkte verwendet.</p>
       </div>
     </div>
   </aside>
@@ -165,50 +170,270 @@
 
   <div class="modal" id="buyNoticeModal" aria-hidden="true">
     <div class="buy-notice-card" role="dialog" aria-modal="true" aria-labelledby="buyNoticeTitle">
-      <button class="close modal-close" id="closeBuyNotice" type="button" aria-label="Hinweis schließen">×</button>
+      <button class="close modal-close" id="closeBuyNotice" type="button" aria-label="Hinweis schließen" data-i18n-aria-label="buyNotice.close">×</button>
       <div class="buy-notice-icon">✉️</div>
-      <h2 id="buyNoticeTitle">Wichtig vor der Zahlung</h2>
-      <p>Bitte trage auf der SumUp-Zahlungsseite deine E-Mail-Adresse bei „Anmerkung für den Händler“ ein.</p>
-      <div class="notice">Nur mit dieser E-Mail-Adresse können wir dir die Aktivierungsinformationen nach der Zahlung zuverlässig zusenden.</div>
+      <h2 id="buyNoticeTitle" data-i18n="buyNotice.title">Wichtig vor der Zahlung</h2>
+      <p data-i18n="buyNotice.copy">Bitte trage auf der SumUp-Zahlungsseite deine E-Mail-Adresse bei „Anmerkung für den Händler“ ein.</p>
+      <div class="notice" data-i18n="buyNotice.notice">Nur mit dieser E-Mail-Adresse können wir dir die Aktivierungsinformationen nach der Zahlung zuverlässig zusenden.</div>
       <div class="buy-notice-actions">
-        <button class="btn secondary" type="button" onclick="closeBuyNotice()">Abbrechen</button>
-        <a class="btn" id="continuePayment" href="#" target="_blank" rel="noopener">Verstanden, weiter zur Zahlung</a>
+        <button class="btn secondary" type="button" onclick="closeBuyNotice()" data-i18n="buyNotice.cancel">Abbrechen</button>
+        <a class="btn" id="continuePayment" href="#" target="_blank" rel="noopener" data-i18n="buyNotice.continue">Verstanden, weiter zur Zahlung</a>
       </div>
     </div>
   </div>
 
   <script>
+    const i18n = {
+      de: {
+        meta: {
+          title: 'HYAKUS | Digitale Deals für 12 Monate',
+          description: 'Digitale 12-Monats-Angebote: AI, Streaming, Kreativ-Tools, VPN und Premium-Abos. Moderne Shop-Demo mit Warenkorb.'
+        },
+        language: { aria: 'Sprache auswählen' },
+        topline: {
+          delivery: 'Digitale 12-Monats-Angebote mit schneller Lieferung',
+          activation: 'Aktivierungsinformationen in der Regel innerhalb von 24 Stunden per E-Mail'
+        },
+        brand: { subtitle: 'Premium Deals' },
+        nav: { bonus: '50€ Gratis verdienen', products: 'Produkte', process: 'Ablauf', notes: 'Hinweise', buyNow: 'Jetzt kaufen' },
+        hero: {
+          eyebrow: '⚡ 12 Monate Premium',
+          title: 'Digitale Deals, die sofort auffallen.',
+          lead: 'Entdecke starke 12-Monats-Angebote für Kreativität, KI, Streaming, Lernen und Sicherheit. Modern, übersichtlich und mit klaren Informationen zur Aktivierung nach dem Kauf.',
+          viewDeals: 'Deals ansehen',
+          howItWorks: 'So funktioniert es',
+          trustEmail: '✓ Lieferung per E-Mail',
+          trustDuration: '✓ 12 Monate Laufzeit',
+          trustInfo: '✓ Klare Produktinfos'
+        },
+        heroDeal: {
+          youtubeTitle: '12 Monate YouTube Premium', youtubeText: 'Premium-Streaming ohne Umwege',
+          spotifyTitle: '12 Monate Spotify Premium', spotifyText: 'Musik & Podcasts für dein Jahr',
+          crunchyTitle: 'Crunchyroll Account oder Profil', crunchyText: '12 Monate Anime-Zugang ab 19,99 €', crunchyPrice: 'ab 19,99 €'
+        },
+        shop: {
+          kicker: 'Shop', title: 'Alle Deals auf einen Blick.',
+          copy: 'Wähle dein Produkt, lies die wichtigsten Hinweise und klicke auf „Jetzt kaufen“. Die Bezahlung läuft anschließend sicher über den jeweiligen SumUp-Zahlungslink.',
+          searchPlaceholder: 'Produkt suchen ...'
+        },
+        categories: { Alle: 'Alle', KI: 'KI', Streaming: 'Streaming', Kreativ: 'Kreativ', Sicherheit: 'Sicherheit', Lernen: 'Lernen', Bonus: 'Bonus' },
+        crunchy: {
+          kicker: 'Neu bei Crunchyroll',
+          title: 'Wähle zwischen eigenem Account und günstiger Profil-Option.',
+          copy: 'So wirkt das Angebot klarer: Wer volle Kontrolle möchte, nimmt den Account. Wer sparen möchte, wählt ein eigenes Profil für 12 Monate.',
+          accountButton: 'Account ansehen', profileButton: 'Profil ansehen',
+          accountTitle: 'Eigener Account', accountText: '12 Monate Mega-Fan mit eigenem Zugang.',
+          profileTitle: 'Eigenes Profil', profileText: 'Kein eigener Account, aber eigenes Profil für 12 Monate.'
+        },
+        process: {
+          kicker: 'So läuft es ab', title: 'Schnell bestellen, entspannt aktivieren.',
+          copy: 'Alle Produkte sind digitale 12-Monats-Angebote. Nach der Bestellung erhältst du die weiteren Informationen zur Aktivierung per E-Mail.',
+          step1Title: '1. Produkt auswählen', step1Text: 'Wähle den gewünschten Deal aus und prüfe Laufzeit, Preis und Produkthinweise.',
+          step2Title: '2. Bestellung senden', step2Text: 'Klicke auf „Jetzt kaufen“ und bezahle bequem über den jeweiligen SumUp-Zahlungslink.',
+          step3Title: '3. Aktivierung erhalten', step3Text: 'Nach erfolgreicher Zahlung erhältst du alle weiteren Informationen zur Aktivierung per E-Mail. Die Lieferung erfolgt in der Regel innerhalb von 24 Stunden.'
+        },
+        notes: {
+          kicker: 'Wichtige Hinweise', title: 'Transparent vor dem Kauf.',
+          copy: 'Bitte beachte je nach Produkt die Angaben zu Laufzeit, Aktivierung und Nutzung. Der genaue Ablauf wird nach dem Kauf verständlich erklärt.',
+          deliveryTitle: 'Lieferzeit', deliveryText: 'Die Lieferung beziehungsweise Aktivierungsinformation erfolgt in der Regel innerhalb von 24 Stunden per E-Mail.',
+          durationTitle: 'Laufzeit', durationText: 'Alle Angebote sind auf 12 Monate ausgelegt. Beachte die jeweiligen Produkthinweise zur Nutzung.',
+          paymentTitle: 'Einmalzahlung', paymentText: 'Die Angebote sind als Einmalzahlung für 12 Monate formuliert und nicht als monatliches Abo dargestellt.'
+        },
+        footer: { copy: '© 2026 HYAKUS Premium Deals', legal: 'Impressum', privacy: 'Datenschutz', terms: 'AGB' },
+        cart: {
+          title: 'Warenkorb', close: 'Warenkorb schließen', total: 'Gesamt', mailOrder: 'Bestellung per E-Mail senden',
+          hint: 'Hinweis: Für Direktzahlungen werden die jeweiligen SumUp-Zahlungslinks der Produkte verwendet.',
+          empty: 'Dein Warenkorb ist leer.', perItem: 'pro Stück'
+        },
+        buyNotice: {
+          close: 'Hinweis schließen', title: 'Wichtig vor der Zahlung',
+          copy: 'Bitte trage auf der SumUp-Zahlungsseite deine E-Mail-Adresse bei „Anmerkung für den Händler“ ein.',
+          notice: 'Nur mit dieser E-Mail-Adresse können wir dir die Aktivierungsinformationen nach der Zahlung zuverlässig zusenden.',
+          cancel: 'Abbrechen', continue: 'Verstanden, weiter zur Zahlung'
+        },
+        productsUi: {
+          details: 'Details', detailsRef: 'Details & Ref-Link', buy: 'Kaufen', request: 'Anfragen', requestProfile: 'Profil anfragen', buyNow: 'Jetzt kaufen',
+          empty: 'Keine Produkte gefunden.', duration12: '12 Monate', modalClose: 'Produktdetails schließen', refOpen: 'Ref-Link öffnen'
+        },
+        activationText: 'Nach erfolgreicher Zahlung erhältst du alle weiteren Informationen zur Aktivierung per E-Mail. Die Lieferung erfolgt in der Regel innerhalb von 24 Stunden. Bitte beachte die Hinweise zur Laufzeit und Nutzung im jeweiligen Produkt.',
+        mail: {
+          cartSubject: 'Bestellung HYAKUS Shop',
+          greeting: 'Hallo, ich möchte folgende Produkte bestellen:',
+          total: 'Gesamt',
+          activationRequest: 'Bitte sende mir die weiteren Informationen zur Aktivierung per E-Mail.',
+          interest: 'Hallo, ich interessiere mich für die digitalen Angebote.',
+          productSubjectPrefix: 'Bestellung HYAKUS Shop - ',
+          productGreeting: 'Hallo,\n\nich möchte folgendes Produkt bestellen:',
+          productRequest: 'Bitte sende mir die weiteren Informationen zur Aktivierung und Zahlung per E-Mail.',
+          thanks: 'Vielen Dank.'
+        }
+      },
+      en: {
+        meta: {
+          title: 'HYAKUS | Digital Deals for 12 Months',
+          description: 'Digital 12-month deals: AI, streaming, creative tools, VPN and premium subscriptions. Modern shop demo with clear purchase information.'
+        },
+        language: { aria: 'Select language' },
+        topline: {
+          delivery: 'Digital 12-month deals with fast delivery',
+          activation: 'Activation information usually sent by email within 24 hours'
+        },
+        brand: { subtitle: 'Premium Deals' },
+        nav: { bonus: 'Earn €50 for free', products: 'Products', process: 'Process', notes: 'Notes', buyNow: 'Buy now' },
+        hero: {
+          eyebrow: '⚡ 12 Months Premium',
+          title: 'Digital deals that instantly stand out.',
+          lead: 'Discover strong 12-month deals for creativity, AI, streaming, learning and security. Modern, clear and with easy-to-understand activation information after purchase.',
+          viewDeals: 'View deals',
+          howItWorks: 'How it works',
+          trustEmail: '✓ Delivery by email',
+          trustDuration: '✓ 12-month term',
+          trustInfo: '✓ Clear product info'
+        },
+        heroDeal: {
+          youtubeTitle: '12 Months YouTube Premium', youtubeText: 'Premium streaming without detours',
+          spotifyTitle: '12 Months Spotify Premium', spotifyText: 'Music & podcasts for your year',
+          crunchyTitle: 'Crunchyroll Account or Profile', crunchyText: '12 months of anime access from €19.99', crunchyPrice: 'from €19.99'
+        },
+        shop: {
+          kicker: 'Shop', title: 'All deals at a glance.',
+          copy: 'Choose your product, read the key notes and click “Buy now”. Payment then runs securely through the respective SumUp payment link.',
+          searchPlaceholder: 'Search product ...'
+        },
+        categories: { Alle: 'All', KI: 'AI', Streaming: 'Streaming', Kreativ: 'Creative', Sicherheit: 'Security', Lernen: 'Learning', Bonus: 'Bonus' },
+        crunchy: {
+          kicker: 'New at Crunchyroll',
+          title: 'Choose between your own account and a low-cost profile option.',
+          copy: 'This makes the offer clearer: choose the account if you want full control, or choose your own profile for 12 months if you want to save money.',
+          accountButton: 'View account', profileButton: 'View profile',
+          accountTitle: 'Your own account', accountText: '12 months of Mega Fan with your own access.',
+          profileTitle: 'Your own profile', profileText: 'No separate account, but your own profile for 12 months.'
+        },
+        process: {
+          kicker: 'How it works', title: 'Order quickly, activate easily.',
+          copy: 'All products are digital 12-month offers. After ordering, you will receive the further activation information by email.',
+          step1Title: '1. Choose product', step1Text: 'Select the deal you want and check the term, price and product notes.',
+          step2Title: '2. Submit order', step2Text: 'Click “Buy now” and pay conveniently via the respective SumUp payment link.',
+          step3Title: '3. Receive activation', step3Text: 'After successful payment, you will receive all further activation information by email. Delivery is usually within 24 hours.'
+        },
+        notes: {
+          kicker: 'Important notes', title: 'Transparent before you buy.',
+          copy: 'Please note the information on term, activation and use for each product. The exact process is explained clearly after purchase.',
+          deliveryTitle: 'Delivery time', deliveryText: 'Delivery or activation information is usually sent by email within 24 hours.',
+          durationTitle: 'Term', durationText: 'All offers are designed for 12 months. Please note the product-specific usage information.',
+          paymentTitle: 'One-time payment', paymentText: 'The offers are presented as a one-time payment for 12 months and not as a monthly subscription.'
+        },
+        footer: { copy: '© 2026 HYAKUS Premium Deals', legal: 'Legal Notice', privacy: 'Privacy Policy', terms: 'Terms' },
+        cart: {
+          title: 'Cart', close: 'Close cart', total: 'Total', mailOrder: 'Send order by email',
+          hint: 'Note: Direct payments use the respective SumUp payment links for the products.',
+          empty: 'Your cart is empty.', perItem: 'per item'
+        },
+        buyNotice: {
+          close: 'Close note', title: 'Important before payment',
+          copy: 'Please enter your email address on the SumUp payment page under “Note for the merchant”.',
+          notice: 'Only with this email address can we reliably send you the activation information after payment.',
+          cancel: 'Cancel', continue: 'Understood, continue to payment'
+        },
+        productsUi: {
+          details: 'Details', detailsRef: 'Details & referral link', buy: 'Buy', request: 'Request', requestProfile: 'Request profile', buyNow: 'Buy now',
+          empty: 'No products found.', duration12: '12 Months', modalClose: 'Close product details', refOpen: 'Open referral link'
+        },
+        activationText: 'After successful payment, you will receive all further activation information by email. Delivery is usually within 24 hours. Please note the term and usage information for the respective product.',
+        mail: {
+          cartSubject: 'HYAKUS Shop Order',
+          greeting: 'Hello, I would like to order the following products:',
+          total: 'Total',
+          activationRequest: 'Please send me the further activation information by email.',
+          interest: 'Hello, I am interested in the digital offers.',
+          productSubjectPrefix: 'HYAKUS Shop Order - ',
+          productGreeting: 'Hello,\n\nI would like to order the following product:',
+          productRequest: 'Please send me the further activation and payment information by email.',
+          thanks: 'Thank you.'
+        }
+      }
+    };
+
     const products = [
-      {id:'youtube', name:'12 Monate YouTube Premium', cat:'Streaming', price:49.99, old:129.99, code:'YT', gradient:'linear-gradient(135deg,#2b0505,#ff1c1c 54%,#ffab4a)', pay:'https://pay.sumup.com/b2c/QDBUNEZV', short:'YouTube Premium für werbefreies Streaming und mehr Komfort.', desc:'Gönn dir 12 Monate YouTube Premium für dein Entertainment-Jahr.', bullets:['12 Monate YouTube Premium.','Aktivierungsinformationen erhältst du nach dem Kauf per E-Mail.','Die Lieferung erfolgt in der Regel innerhalb von 24 Stunden.','Einmalzahlung für 12 Monate, kein monatliches Abo.']},
-      {id:'spotify', name:'12 Monate Spotify Premium', cat:'Streaming', price:59.99, old:159.99, code:'SP', gradient:'linear-gradient(135deg,#052810,#1ed760 52%,#e4ff62)', pay:'https://pay.sumup.com/b2c/QSHXGJ9T', short:'Musik, Podcasts und Premium-Feeling für 12 Monate.', desc:'Gönn dir 12 Monate Spotify Premium und genieße Musik ohne Umwege.', bullets:['12 Monate Spotify Premium.','Aktivierungsinformationen erhältst du nach dem Kauf per E-Mail.','Die Lieferung erfolgt in der Regel innerhalb von 24 Stunden.','Einmalzahlung für 12 Monate, kein monatliches Abo.']},
-      {id:'crunchyroll', name:'12 Monate Crunchyroll Account', displayName:'Crunchyroll Account', cat:'Streaming', price:29.99, old:99.99, code:'CR', gradient:'linear-gradient(135deg,#300606,#ff4c16 52%,#ffd05a)', pay:'https://pay.sumup.com/b2c/QH70LVX4', short:'Eigener Crunchyroll-Zugang für 12 Monate.', desc:'Die volle Crunchyroll-Option: 12 Monate Mega-Fan als eigener Account.', bullets:['12 Monate Crunchyroll Premium Mega-Fan als eigener Account.','Du erhältst einen eigenen Zugang für die Nutzung über 12 Monate.','Aktivierungsinformationen erhältst du nach dem Kauf per E-Mail.','Die Lieferung erfolgt in der Regel innerhalb von 24 Stunden.','Einmalzahlung für 12 Monate, kein monatliches Abo.']},
-      {id:'crunchyroll-profil', name:'12 Monate Crunchyroll Profil', displayName:'Crunchyroll Profil', duration:'12 Monate Profil', cat:'Streaming', price:19.99, old:69.99, code:'CR+', gradient:'linear-gradient(135deg,#261005,#ff7a18 52%,#ffe066)', requestOnly:true, short:'Günstiger Zugang zu einem eigenen Profil, aber kein eigener Account.', desc:'Die günstigere Crunchyroll-Option: Zugang für 12 Monate zu einem eigenen Profil innerhalb eines bestehenden Accounts.', bullets:['12 Monate Zugang zu einem eigenen Crunchyroll-Profil.','Kein eigener Account: Du erhältst Zugang zu einem separaten Profil innerhalb eines bestehenden Accounts.','Ideal, wenn du sparen möchtest und keinen eigenen Account brauchst.','Aktivierungsinformationen erhältst du nach der Bestellung per E-Mail.','Die Lieferung erfolgt in der Regel innerhalb von 24 Stunden.','Einmalzahlung für 12 Monate, kein monatliches Abo.']},
-      {id:'prime', name:'12 Monate Prime Video', cat:'Streaming', price:39.99, old:89.99, code:'PV', gradient:'linear-gradient(135deg,#07184c,#1192ff 55%,#75e9ff)', pay:'https://pay.sumup.com/b2c/QNVGHW0Q', short:'Streaming für Filme, Serien und entspannte Abende.', desc:'Gönn dir 12 Monate Prime Video und genieße Streaming für dein Jahr.', bullets:['12 Monate Prime Video.','Aktivierungsinformationen erhältst du nach dem Kauf per E-Mail.','Die Lieferung erfolgt in der Regel innerhalb von 24 Stunden.','Einmalzahlung für 12 Monate, kein monatliches Abo.']},
-      {id:'adobe', name:'12 Monate Adobe Creative Cloud', cat:'Kreativ', price:69.99, old:199.99, code:'CC', gradient:'linear-gradient(135deg,#270605,#ff230d 45%,#ffb000)', pay:'https://pay.sumup.com/b2c/QBO8K3YH', short:'Alle wichtigen Kreativ-Apps für dein nächstes Projektjahr.', desc:'Gönn dir 12 Monate Adobe Creative Cloud und arbeite kreativ mit starken Tools für Design, Video, Foto und mehr.', bullets:['Enthält bekannte Adobe-Apps wie Photoshop, Illustrator, Premiere Pro, After Effects, Lightroom und InDesign.','Cloud-Speicher: 85 GB.','KI-Generierungsguthaben: 500 Credits pro Monat für Generative Fill, Text-zu-Bild und weitere Funktionen.','3D-Apps enthalten: Substance 3D Painter, Sampler, Designer und Stager.','Einmalzahlung für 12 Monate, kein monatliches Abo.']},
-      {id:'duolingo', name:'12 Monate Duolingo Max', cat:'Lernen', price:69.99, old:179.99, code:'DUO', gradient:'linear-gradient(135deg,#173c04,#8eff00 55%,#e6ff6e)', pay:'https://pay.sumup.com/b2c/QFWMHIKK', short:'Lerne Sprachen smarter, motivierter und mit Premium-Funktionen.', desc:'Lerne Sprachen wie ein Weltmeister mit 12 Monaten Duolingo Max.', bullets:['12 Monate Duolingo Max.','Aktivierungsinformationen erhältst du nach dem Kauf per E-Mail.','Die Aktivierung wird verständlich erklärt.','Die Lieferung erfolgt in der Regel innerhalb von 24 Stunden.']},
-      {id:'norton', name:'12 Monate Norton VPN', cat:'Sicherheit', price:24.99, old:49.99, code:'VPN', gradient:'linear-gradient(135deg,#06133e,#006cff 55%,#62e5ff)', pay:'https://pay.sumup.com/b2c/QGUDPT9Z', short:'Sicherer surfen mit VPN- und Schutzfunktionen.', desc:'Schütze dich online mit 12 Monaten Norton VPN und Antivirus.', bullets:['Nach dem Kauf erhältst du die Aktivierungsinformationen per E-Mail.','Aktiviere Norton mit den erhaltenen Informationen.','12 Monate Nutzung für VPN und Antivirus.','Klare digitale Lieferung, in der Regel innerhalb von 24 Stunden.']},
-      {id:'chatgpt', name:'12 Monate ChatGPT Pro', cat:'KI', price:99.99, old:null, code:'AI', gradient:'linear-gradient(135deg,#06260f,#00e66f 52%,#a7ffcb)', pay:'https://pay.sumup.com/b2c/QCOYHNY3', short:'Boost für KI, Ideen, Texte und produktives Arbeiten.', desc:'Booste deine KI-Erfahrung auf das nächste Level mit 12 Monaten ChatGPT Pro.', bullets:['Du erhältst nach dem Kauf alle weiteren Informationen zur Aktivierung per E-Mail.','Die Aktivierung wird verständlich erklärt.','Die Nutzung ist auf 12 Monate ausgelegt.','Regulärer Vergleichspreis laut Angebot: ca. 200 € pro Monat.']},
-      {id:'perplexity', name:'12 Monate Perplexity AI Pro', cat:'KI', price:69.99, old:199.99, code:'P', gradient:'linear-gradient(135deg,#170736,#853cff 52%,#4af3ff)', pay:'https://pay.sumup.com/b2c/QMINIL9W', short:'Recherche, Antworten und AI-Power für dein Produktivitätsjahr.', desc:'Nutze 12 Monate Perplexity AI Pro für schnelle Recherche, smarte Antworten und produktives Arbeiten.', bullets:['12 Monate Perplexity AI Pro.','Aktivierungsinformationen erhältst du nach dem Kauf per E-Mail.','Die Nutzungshinweise werden verständlich erklärt.','Einmalzahlung für 12 Monate.']},
-      {id:'robinhood', name:'50€ Gratis?', displayName:'Robinhood App', duration:'Bonus Aktion', cat:'Bonus', price:0, priceLabel:'50€ Gratis?', old:null, code:'RH', gradient:'linear-gradient(135deg,#052b18,#00c805 52%,#d8ff5f)', short:'Werbung: Erhalte 50€ Gratis bei Registrierung über meinen Ref-Link.', desc:'Erhalte 50€ Gratis, wenn du dich über meinen Ref-Link bei Robinhood registrierst.', ref:true, link:'https://join.robinhood.com/eu_crypto/jonnyl-d0e34c0/', bullets:['Klicke auf den Link und trage deine E-Mail ein.','Lade die Robinhood App im Playstore herunter.','Registriere dich in der App mit derselben E-Mail wie aus Schritt 1.','Verifiziere dein Profil.','Lade 50€ via Echtzeitüberweisung auf. Du kannst diese anschließend wieder abbuchen lassen.','Du erhältst automatisch deine 50€ Prämie.','Hinweis: Es gelten die aktuellen Bedingungen von Robinhood. Keine Anlageberatung.']}
+      {id:'youtube', cat:'Streaming', price:49.99, old:129.99, code:'YT', gradient:'linear-gradient(135deg,#2b0505,#ff1c1c 54%,#ffab4a)', pay:'https://pay.sumup.com/b2c/QDBUNEZV', i18n:{de:{name:'12 Monate YouTube Premium',displayName:'YouTube Premium',short:'YouTube Premium für werbefreies Streaming und mehr Komfort.',desc:'Gönn dir 12 Monate YouTube Premium für dein Entertainment-Jahr.',bullets:['12 Monate YouTube Premium.','Aktivierungsinformationen erhältst du nach dem Kauf per E-Mail.','Die Lieferung erfolgt in der Regel innerhalb von 24 Stunden.','Einmalzahlung für 12 Monate, kein monatliches Abo.']},en:{name:'12 Months YouTube Premium',displayName:'YouTube Premium',short:'YouTube Premium for ad-free streaming and more comfort.',desc:'Treat yourself to 12 months of YouTube Premium for your entertainment year.',bullets:['12 months YouTube Premium.','After purchase, you will receive activation information by email.','Delivery is usually within 24 hours.','One-time payment for 12 months, not a monthly subscription.']}}},
+      {id:'spotify', cat:'Streaming', price:59.99, old:159.99, code:'SP', gradient:'linear-gradient(135deg,#052810,#1ed760 52%,#e4ff62)', pay:'https://pay.sumup.com/b2c/QSHXGJ9T', i18n:{de:{name:'12 Monate Spotify Premium',displayName:'Spotify Premium',short:'Musik, Podcasts und Premium-Feeling für 12 Monate.',desc:'Gönn dir 12 Monate Spotify Premium und genieße Musik ohne Umwege.',bullets:['12 Monate Spotify Premium.','Aktivierungsinformationen erhältst du nach dem Kauf per E-Mail.','Die Lieferung erfolgt in der Regel innerhalb von 24 Stunden.','Einmalzahlung für 12 Monate, kein monatliches Abo.']},en:{name:'12 Months Spotify Premium',displayName:'Spotify Premium',short:'Music, podcasts and a premium feeling for 12 months.',desc:'Treat yourself to 12 months of Spotify Premium and enjoy music without detours.',bullets:['12 months Spotify Premium.','After purchase, you will receive activation information by email.','Delivery is usually within 24 hours.','One-time payment for 12 months, not a monthly subscription.']}}},
+      {id:'crunchyroll', cat:'Streaming', price:29.99, old:99.99, code:'CR', gradient:'linear-gradient(135deg,#300606,#ff4c16 52%,#ffd05a)', pay:'https://pay.sumup.com/b2c/QH70LVX4', i18n:{de:{name:'12 Monate Crunchyroll Account',displayName:'Crunchyroll Account',short:'Eigener Crunchyroll-Zugang für 12 Monate.',desc:'Die volle Crunchyroll-Option: 12 Monate Mega-Fan als eigener Account.',bullets:['12 Monate Crunchyroll Premium Mega-Fan als eigener Account.','Du erhältst einen eigenen Zugang für die Nutzung über 12 Monate.','Aktivierungsinformationen erhältst du nach dem Kauf per E-Mail.','Die Lieferung erfolgt in der Regel innerhalb von 24 Stunden.','Einmalzahlung für 12 Monate, kein monatliches Abo.']},en:{name:'12 Months Crunchyroll Account',displayName:'Crunchyroll Account',short:'Your own Crunchyroll access for 12 months.',desc:'The full Crunchyroll option: 12 months of Mega Fan as your own account.',bullets:['12 months Crunchyroll Premium Mega Fan as your own account.','You receive your own access for use over 12 months.','After purchase, you will receive activation information by email.','Delivery is usually within 24 hours.','One-time payment for 12 months, not a monthly subscription.']}}},
+      {id:'crunchyroll-profil', cat:'Streaming', price:19.99, old:69.99, code:'CR+', gradient:'linear-gradient(135deg,#261005,#ff7a18 52%,#ffe066)', requestOnly:true, i18n:{de:{name:'12 Monate Crunchyroll Profil',displayName:'Crunchyroll Profil',duration:'12 Monate Profil',short:'Günstiger Zugang zu einem eigenen Profil, aber kein eigener Account.',desc:'Die günstigere Crunchyroll-Option: Zugang für 12 Monate zu einem eigenen Profil innerhalb eines bestehenden Accounts.',bullets:['12 Monate Zugang zu einem eigenen Crunchyroll-Profil.','Kein eigener Account: Du erhältst Zugang zu einem separaten Profil innerhalb eines bestehenden Accounts.','Ideal, wenn du sparen möchtest und keinen eigenen Account brauchst.','Aktivierungsinformationen erhältst du nach der Bestellung per E-Mail.','Die Lieferung erfolgt in der Regel innerhalb von 24 Stunden.','Einmalzahlung für 12 Monate, kein monatliches Abo.']},en:{name:'12 Months Crunchyroll Profile',displayName:'Crunchyroll Profile',duration:'12-Month Profile',short:'Lower-cost access to your own profile, but not your own account.',desc:'The lower-cost Crunchyroll option: 12 months of access to your own profile within an existing account.',bullets:['12 months of access to your own Crunchyroll profile.','No separate account: you receive access to a separate profile within an existing account.','Ideal if you want to save money and do not need your own account.','After ordering, you will receive activation information by email.','Delivery is usually within 24 hours.','One-time payment for 12 months, not a monthly subscription.']}}},
+      {id:'prime', cat:'Streaming', price:39.99, old:89.99, code:'PV', gradient:'linear-gradient(135deg,#07184c,#1192ff 55%,#75e9ff)', pay:'https://pay.sumup.com/b2c/QNVGHW0Q', i18n:{de:{name:'12 Monate Prime Video',displayName:'Prime Video',short:'Streaming für Filme, Serien und entspannte Abende.',desc:'Gönn dir 12 Monate Prime Video und genieße Streaming für dein Jahr.',bullets:['12 Monate Prime Video.','Aktivierungsinformationen erhältst du nach dem Kauf per E-Mail.','Die Lieferung erfolgt in der Regel innerhalb von 24 Stunden.','Einmalzahlung für 12 Monate, kein monatliches Abo.']},en:{name:'12 Months Prime Video',displayName:'Prime Video',short:'Streaming for movies, series and relaxed evenings.',desc:'Treat yourself to 12 months of Prime Video and enjoy streaming for your year.',bullets:['12 months Prime Video.','After purchase, you will receive activation information by email.','Delivery is usually within 24 hours.','One-time payment for 12 months, not a monthly subscription.']}}},
+      {id:'adobe', cat:'Kreativ', price:69.99, old:199.99, code:'CC', gradient:'linear-gradient(135deg,#270605,#ff230d 45%,#ffb000)', pay:'https://pay.sumup.com/b2c/QBO8K3YH', i18n:{de:{name:'12 Monate Adobe Creative Cloud',displayName:'Adobe Creative Cloud',short:'Alle wichtigen Kreativ-Apps für dein nächstes Projektjahr.',desc:'Gönn dir 12 Monate Adobe Creative Cloud und arbeite kreativ mit starken Tools für Design, Video, Foto und mehr.',bullets:['Enthält bekannte Adobe-Apps wie Photoshop, Illustrator, Premiere Pro, After Effects, Lightroom und InDesign.','Cloud-Speicher: 85 GB.','KI-Generierungsguthaben: 500 Credits pro Monat für Generative Fill, Text-zu-Bild und weitere Funktionen.','3D-Apps enthalten: Substance 3D Painter, Sampler, Designer und Stager.','Einmalzahlung für 12 Monate, kein monatliches Abo.']},en:{name:'12 Months Adobe Creative Cloud',displayName:'Adobe Creative Cloud',short:'All important creative apps for your next project year.',desc:'Treat yourself to 12 months of Adobe Creative Cloud and create with powerful tools for design, video, photo and more.',bullets:['Includes popular Adobe apps such as Photoshop, Illustrator, Premiere Pro, After Effects, Lightroom and InDesign.','Cloud storage: 85 GB.','AI generation credits: 500 credits per month for Generative Fill, text-to-image and other features.','3D apps included: Substance 3D Painter, Sampler, Designer and Stager.','One-time payment for 12 months, not a monthly subscription.']}}},
+      {id:'duolingo', cat:'Lernen', price:69.99, old:179.99, code:'DUO', gradient:'linear-gradient(135deg,#173c04,#8eff00 55%,#e6ff6e)', pay:'https://pay.sumup.com/b2c/QFWMHIKK', i18n:{de:{name:'12 Monate Duolingo Max',displayName:'Duolingo Max',short:'Lerne Sprachen smarter, motivierter und mit Premium-Funktionen.',desc:'Lerne Sprachen wie ein Weltmeister mit 12 Monaten Duolingo Max.',bullets:['12 Monate Duolingo Max.','Aktivierungsinformationen erhältst du nach dem Kauf per E-Mail.','Die Aktivierung wird verständlich erklärt.','Die Lieferung erfolgt in der Regel innerhalb von 24 Stunden.']},en:{name:'12 Months Duolingo Max',displayName:'Duolingo Max',short:'Learn languages smarter, more motivated and with premium features.',desc:'Learn languages like a champion with 12 months of Duolingo Max.',bullets:['12 months Duolingo Max.','After purchase, you will receive activation information by email.','Activation is explained clearly.','Delivery is usually within 24 hours.']}}},
+      {id:'norton', cat:'Sicherheit', price:24.99, old:49.99, code:'VPN', gradient:'linear-gradient(135deg,#06133e,#006cff 55%,#62e5ff)', pay:'https://pay.sumup.com/b2c/QGUDPT9Z', i18n:{de:{name:'12 Monate Norton VPN',displayName:'Norton VPN',short:'Sicherer surfen mit VPN- und Schutzfunktionen.',desc:'Schütze dich online mit 12 Monaten Norton VPN und Antivirus.',bullets:['Nach dem Kauf erhältst du die Aktivierungsinformationen per E-Mail.','Aktiviere Norton mit den erhaltenen Informationen.','12 Monate Nutzung für VPN und Antivirus.','Klare digitale Lieferung, in der Regel innerhalb von 24 Stunden.']},en:{name:'12 Months Norton VPN',displayName:'Norton VPN',short:'Browse more securely with VPN and protection features.',desc:'Protect yourself online with 12 months of Norton VPN and antivirus.',bullets:['After purchase, you will receive the activation information by email.','Activate Norton using the information received.','12 months of use for VPN and antivirus.','Clear digital delivery, usually within 24 hours.']}}},
+      {id:'chatgpt', cat:'KI', price:99.99, old:null, code:'AI', gradient:'linear-gradient(135deg,#06260f,#00e66f 52%,#a7ffcb)', pay:'https://pay.sumup.com/b2c/QCOYHNY3', i18n:{de:{name:'12 Monate ChatGPT Pro',displayName:'ChatGPT Pro',short:'Boost für KI, Ideen, Texte und produktives Arbeiten.',desc:'Booste deine KI-Erfahrung auf das nächste Level mit 12 Monaten ChatGPT Pro.',bullets:['Du erhältst nach dem Kauf alle weiteren Informationen zur Aktivierung per E-Mail.','Die Aktivierung wird verständlich erklärt.','Die Nutzung ist auf 12 Monate ausgelegt.','Regulärer Vergleichspreis laut Angebot: ca. 200 € pro Monat.']},en:{name:'12 Months ChatGPT Pro',displayName:'ChatGPT Pro',short:'A boost for AI, ideas, writing and productive work.',desc:'Take your AI experience to the next level with 12 months of ChatGPT Pro.',bullets:['After purchase, you will receive all further activation information by email.','Activation is explained clearly.','Use is designed for 12 months.','Regular comparison price according to the offer: approx. €200 per month.']}}},
+      {id:'perplexity', cat:'KI', price:69.99, old:199.99, code:'P', gradient:'linear-gradient(135deg,#170736,#853cff 52%,#4af3ff)', pay:'https://pay.sumup.com/b2c/QMINIL9W', i18n:{de:{name:'12 Monate Perplexity AI Pro',displayName:'Perplexity AI Pro',short:'Recherche, Antworten und AI-Power für dein Produktivitätsjahr.',desc:'Nutze 12 Monate Perplexity AI Pro für schnelle Recherche, smarte Antworten und produktives Arbeiten.',bullets:['12 Monate Perplexity AI Pro.','Aktivierungsinformationen erhältst du nach dem Kauf per E-Mail.','Die Nutzungshinweise werden verständlich erklärt.','Einmalzahlung für 12 Monate.']},en:{name:'12 Months Perplexity AI Pro',displayName:'Perplexity AI Pro',short:'Research, answers and AI power for your productivity year.',desc:'Use 12 months of Perplexity AI Pro for fast research, smart answers and productive work.',bullets:['12 months Perplexity AI Pro.','After purchase, you will receive activation information by email.','The usage notes are explained clearly.','One-time payment for 12 months.']}}},
+      {id:'robinhood', cat:'Bonus', price:0, old:null, code:'RH', gradient:'linear-gradient(135deg,#052b18,#00c805 52%,#d8ff5f)', ref:true, link:'https://join.robinhood.com/eu_crypto/jonnyl-d0e34c0/', i18n:{de:{name:'50€ Gratis?',displayName:'Robinhood App',duration:'Bonus Aktion',priceLabel:'50€ Gratis?',short:'Werbung: Erhalte 50€ Gratis bei Registrierung über meinen Ref-Link.',desc:'Erhalte 50€ Gratis, wenn du dich über meinen Ref-Link bei Robinhood registrierst.',bullets:['Klicke auf den Link und trage deine E-Mail ein.','Lade die Robinhood App im Playstore herunter.','Registriere dich in der App mit derselben E-Mail wie aus Schritt 1.','Verifiziere dein Profil.','Lade 50€ via Echtzeitüberweisung auf. Du kannst diese anschließend wieder abbuchen lassen.','Du erhältst automatisch deine 50€ Prämie.','Hinweis: Es gelten die aktuellen Bedingungen von Robinhood. Keine Anlageberatung.']},en:{name:'€50 for free?',displayName:'Robinhood App',duration:'Bonus Promotion',priceLabel:'€50 for free?',short:'Ad: Get €50 for free when you register via my referral link.',desc:'Get €50 for free when you register with Robinhood via my referral link.',bullets:['Click the link and enter your email address.','Download the Robinhood app from the Play Store.','Register in the app using the same email address as in step 1.','Verify your profile.','Deposit €50 by instant bank transfer. You can withdraw it again afterwards.','You automatically receive your €50 bonus.','Note: The current Robinhood terms apply. Not investment advice.']}}}
     ];
-    const activationText = 'Nach erfolgreicher Zahlung erhältst du alle weiteren Informationen zur Aktivierung per E-Mail. Die Lieferung erfolgt in der Regel innerhalb von 24 Stunden. Bitte beachte die Hinweise zur Laufzeit und Nutzung im jeweiligen Produkt.';
-    const format = n => n.toLocaleString('de-DE',{style:'currency',currency:'EUR'});
+
+    let currentLang = localStorage.getItem('hyakusLang') || 'de';
+    if(!i18n[currentLang]) currentLang = 'de';
     let cart = JSON.parse(localStorage.getItem('hyakusCart') || '{}');
     let currentCat = 'Alle';
+    let currentProductId = null;
     const productsEl = document.getElementById('products');
     const searchEl = document.getElementById('search');
     const cartDrawer = document.getElementById('cartDrawer');
     const modal = document.getElementById('productModal');
+    const buyNoticeModal = document.getElementById('buyNoticeModal');
+
+    function t(key){
+      return key.split('.').reduce((obj, part) => obj && obj[part], i18n[currentLang]) ??
+             key.split('.').reduce((obj, part) => obj && obj[part], i18n.de) ?? key;
+    }
+    function productText(p,key){return (p.i18n[currentLang] && p.i18n[currentLang][key]) ?? (p.i18n.de && p.i18n.de[key]) ?? '';}
+    function productList(p,key){return productText(p,key) || [];}
+    function productDuration(p){return productText(p,'duration') || t('productsUi.duration12');}
+    function productPriceLabel(p){return productText(p,'priceLabel') || format(p.price);}
+    function categoryLabel(cat){return t('categories.' + cat);}
+    function format(n){return n.toLocaleString(currentLang === 'de' ? 'de-DE' : 'en-US',{style:'currency',currency:'EUR'});}
+    function escapeHtml(value){return String(value).replace(/[&<>"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[char]));}
+
+    function applyTranslations(){
+      document.documentElement.lang = currentLang;
+      document.title = t('meta.title');
+      const description = document.querySelector('meta[name="description"]');
+      if(description) description.setAttribute('content', t('meta.description'));
+      document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => { el.setAttribute('placeholder', t(el.dataset.i18nPlaceholder)); });
+      document.querySelectorAll('[data-i18n-aria-label]').forEach(el => { el.setAttribute('aria-label', t(el.dataset.i18nAriaLabel)); });
+      document.querySelector('.language-switch')?.setAttribute('aria-label', t('language.aria'));
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        const active = btn.dataset.lang === currentLang;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+    }
+
+    function setLanguage(lang){
+      if(!i18n[lang]) return;
+      currentLang = lang;
+      localStorage.setItem('hyakusLang', lang);
+      applyTranslations();
+      renderProducts();
+      renderCart();
+      updateCheckout();
+      if(modal.classList.contains('open') && currentProductId){
+        renderProductModal(products.find(x => x.id === currentProductId));
+      }
+    }
+
     function renderProducts(){
       const q = searchEl.value.trim().toLowerCase();
-      const visible = products.filter(p => (currentCat === 'Alle' || p.cat === currentCat) && (p.name + ' ' + (p.displayName || '')).toLowerCase().includes(q));
+      const visible = products.filter(p => {
+        const matchesCategory = currentCat === 'Alle' || p.cat === currentCat;
+        const searchable = [productText(p,'name'), productText(p,'displayName'), productText(p,'short'), categoryLabel(p.cat)].join(' ').toLowerCase();
+        return matchesCategory && searchable.includes(q);
+      });
       productsEl.innerHTML = visible.map(p => `
         <article class="product" data-id="${p.id}">
           ${p.old ? '<div class="sale">%</div>' : ''}
-          <div class="art" style="--g:${p.gradient}"><div class="art-content"><div class="duration">${p.duration || '12 Monate'}</div><div class="art-name">${p.displayName || p.name.replace('12 Monate ','')}</div><div class="icon">${p.code}</div></div></div>
-          <div class="product-body"><span class="tag">${p.cat}</span><h3>${p.name}</h3><div class="price-row"><span class="price">${p.priceLabel || format(p.price)}</span>${p.old ? `<span class="old">${format(p.old)}</span>` : ''}</div><p style="color:var(--muted);margin:0;font-weight:650">${p.short}</p><div class="product-actions">${p.ref ? `<button class="ghost" style="grid-column:1 / -1" onclick="openProduct('${p.id}')">Details & Ref-Link</button>` : `<button class="ghost" onclick="openProduct('${p.id}')">Details</button><button class="add" type="button" onclick="startPurchase('${p.id}')">${p.requestOnly ? 'Anfragen' : 'Kaufen'}</button>`}</div></div>
+          <div class="art" style="--g:${p.gradient}"><div class="art-content"><div class="duration">${escapeHtml(productDuration(p))}</div><div class="art-name">${escapeHtml(productText(p,'displayName'))}</div><div class="icon">${escapeHtml(p.code)}</div></div></div>
+          <div class="product-body"><span class="tag">${escapeHtml(categoryLabel(p.cat))}</span><h3>${escapeHtml(productText(p,'name'))}</h3><div class="price-row"><span class="price">${escapeHtml(productPriceLabel(p))}</span>${p.old ? `<span class="old">${format(p.old)}</span>` : ''}</div><p style="color:var(--muted);margin:0;font-weight:650">${escapeHtml(productText(p,'short'))}</p><div class="product-actions">${p.ref ? `<button class="ghost" style="grid-column:1 / -1" onclick="openProduct('${p.id}')">${escapeHtml(t('productsUi.detailsRef'))}</button>` : `<button class="ghost" onclick="openProduct('${p.id}')">${escapeHtml(t('productsUi.details'))}</button><button class="add" type="button" onclick="startPurchase('${p.id}')">${escapeHtml(p.requestOnly ? t('productsUi.request') : t('productsUi.buy'))}</button>`}</div></div>
         </article>
-      `).join('') || '<p class="empty">Keine Produkte gefunden.</p>';
+      `).join('') || `<p class="empty">${escapeHtml(t('productsUi.empty'))}</p>`;
     }
     function addToCart(id){cart[id]=(cart[id]||0)+1;saveCart();openCart();}
     function changeQty(id,delta){cart[id]=(cart[id]||0)+delta;if(cart[id]<=0) delete cart[id];saveCart();renderCart();}
@@ -218,28 +443,21 @@
     function renderCart(){
       const lines = cartLines();
       const items = document.getElementById('cartItems');
-      if(!lines.length){items.innerHTML='<p class="empty">Dein Warenkorb ist leer.</p>';document.getElementById('cartTotal').textContent=format(0);updateCheckout();return;}
-      items.innerHTML = lines.map(({product:p,qty})=>`<div class="cart-item"><div class="cart-thumb" style="--g:${p.gradient}">${p.code}</div><div><b>${p.name}</b><small>${format(p.price)} pro Stück</small></div><div class="qty"><button onclick="changeQty('${p.id}',-1)">−</button><strong>${qty}</strong><button onclick="changeQty('${p.id}',1)">+</button></div></div>`).join('');
+      if(!items) return;
+      if(!lines.length){items.innerHTML=`<p class="empty">${escapeHtml(t('cart.empty'))}</p>`;document.getElementById('cartTotal').textContent=format(0);updateCheckout();return;}
+      items.innerHTML = lines.map(({product:p,qty})=>`<div class="cart-item"><div class="cart-thumb" style="--g:${p.gradient}">${escapeHtml(p.code)}</div><div><b>${escapeHtml(productText(p,'name'))}</b><small>${format(p.price)} ${escapeHtml(t('cart.perItem'))}</small></div><div class="qty"><button onclick="changeQty('${p.id}',-1)">−</button><strong>${qty}</strong><button onclick="changeQty('${p.id}',1)">+</button></div></div>`).join('');
       document.getElementById('cartTotal').textContent=format(lines.reduce((sum,{product:p,qty})=>sum+p.price*qty,0));
       updateCheckout();
     }
     function updateCheckout(){
       const lines = cartLines();
       const total = lines.reduce((sum,{product:p,qty})=>sum+p.price*qty,0);
-      const text = lines.length ? `Hallo, ich möchte folgende Produkte bestellen:%0A%0A${lines.map(({product:p,qty})=>`- ${qty}x ${p.name} (${format(p.price)})`).join('%0A')}%0A%0AGesamt: ${format(total)}%0A%0ABitte sende mir die weiteren Informationen zur Aktivierung per E-Mail.` : 'Hallo, ich interessiere mich für die digitalen Angebote.';
-      document.getElementById('mailOrder').href = `mailto:bestellung@example.de?subject=Bestellung HYAKUS Shop&body=${text}`;
+      const body = lines.length ? `${t('mail.greeting')}\n\n${lines.map(({product:p,qty})=>`- ${qty}x ${productText(p,'name')} (${format(p.price)})`).join('\n')}\n\n${t('mail.total')}: ${format(total)}\n\n${t('mail.activationRequest')}` : t('mail.interest');
+      document.getElementById('mailOrder').href = `mailto:bestellung@example.de?subject=${encodeURIComponent(t('mail.cartSubject'))}&body=${encodeURIComponent(body)}`;
     }
     function productOrderMailto(p){
-      const subject = `Bestellung HYAKUS Shop - ${p.name}`;
-      const body = `Hallo,
-
-ich möchte folgendes Produkt bestellen:
-
-- ${p.name} (${p.priceLabel || format(p.price)})
-
-Bitte sende mir die weiteren Informationen zur Aktivierung und Zahlung per E-Mail.
-
-Vielen Dank.`;
+      const subject = `${t('mail.productSubjectPrefix')}${productText(p,'name')}`;
+      const body = `${t('mail.productGreeting')}\n\n- ${productText(p,'name')} (${productPriceLabel(p)})\n\n${t('mail.productRequest')}\n\n${t('mail.thanks')}`;
       return `mailto:bestellung@example.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     }
     function startPurchase(id){
@@ -250,7 +468,6 @@ Vielen Dank.`;
       }
       showBuyNotice(p.pay);
     }
-    const buyNoticeModal = document.getElementById('buyNoticeModal');
     function showBuyNotice(payUrl){
       const continuePayment = document.getElementById('continuePayment');
       continuePayment.href = payUrl;
@@ -267,12 +484,18 @@ Vielen Dank.`;
     }
     function openCart(){cartDrawer.classList.add('open');cartDrawer.setAttribute('aria-hidden','false');document.body.classList.add('lock');renderCart();}
     function closeCart(){cartDrawer.classList.remove('open');cartDrawer.setAttribute('aria-hidden','true');document.body.classList.remove('lock');}
+    function renderProductModal(p){
+      if(!p) return;
+      document.getElementById('modalCard').innerHTML = `<button class="close modal-close" onclick="closeProduct()" aria-label="${escapeHtml(t('productsUi.modalClose'))}">×</button><div class="modal-art" style="--g:${p.gradient}"><div class="art-content"><div class="duration">${escapeHtml(productDuration(p))}</div><div class="art-name">${escapeHtml(productText(p,'displayName'))}</div><div class="icon">${escapeHtml(p.code)}</div></div></div><div class="modal-body"><span class="tag">${escapeHtml(categoryLabel(p.cat))}</span><h2>${escapeHtml(productText(p,'name'))}</h2><div class="modal-price">${escapeHtml(productPriceLabel(p))}${p.old ? `<span>${format(p.old)}</span>` : ''}</div><p class="modal-desc">${escapeHtml(productText(p,'desc'))}</p>${p.ref ? '' : `<div class="notice">${escapeHtml(t('activationText'))}</div>`}<ul>${productList(p,'bullets').map(b=>`<li>${escapeHtml(b)}</li>`).join('')}</ul>${p.ref ? `<a class="btn" href="${p.link}" target="_blank" rel="noopener">${escapeHtml(t('productsUi.refOpen'))}</a>` : `<button class="btn" type="button" onclick="startPurchase('${p.id}')">${escapeHtml(p.requestOnly ? t('productsUi.requestProfile') : t('productsUi.buyNow'))}</button>`}</div>`;
+    }
     function openProduct(id){
       const p = products.find(x=>x.id===id); if(!p) return;
-      document.getElementById('modalCard').innerHTML = `<button class="close modal-close" onclick="closeProduct()">×</button><div class="modal-art" style="--g:${p.gradient}"><div class="art-content"><div class="duration">${p.duration || '12 Monate'}</div><div class="art-name">${p.displayName || p.name.replace('12 Monate ','')}</div><div class="icon">${p.code}</div></div></div><div class="modal-body"><span class="tag">${p.cat}</span><h2>${p.name}</h2><div class="modal-price">${p.priceLabel || format(p.price)}${p.old ? `<span>${format(p.old)}</span>` : ''}</div><p class="modal-desc">${p.desc}</p>${p.ref ? '' : `<div class="notice">${activationText}</div>`}<ul>${p.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>${p.ref ? `<a class="btn" href="${p.link}" target="_blank" rel="noopener">Ref-Link öffnen</a>` : `<button class="btn" type="button" onclick="startPurchase('${p.id}')">${p.requestOnly ? 'Profil anfragen' : 'Jetzt kaufen'}</button>`}</div>`;
+      currentProductId = id;
+      renderProductModal(p);
       modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.classList.add('lock');
     }
-    function closeProduct(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.classList.remove('lock');}
+    function closeProduct(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');currentProductId=null;if(!buyNoticeModal.classList.contains('open')) document.body.classList.remove('lock');}
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.addEventListener('click', () => setLanguage(btn.dataset.lang)));
     document.getElementById('openCart')?.addEventListener('click',openCart);
     document.getElementById('heroCart')?.addEventListener('click',openCart);
     document.getElementById('closeCart').addEventListener('click',closeCart);
@@ -283,7 +506,8 @@ Vielen Dank.`;
     buyNoticeModal.addEventListener('click',e=>{if(e.target===buyNoticeModal) closeBuyNotice()});
     document.getElementById('filters').addEventListener('click',e=>{if(e.target.matches('.filter')){document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));e.target.classList.add('active');currentCat=e.target.dataset.cat;renderProducts();}});
     searchEl.addEventListener('input',renderProducts);
-    renderProducts();renderCartCount();updateCheckout();
+    applyTranslations();renderProducts();renderCartCount();updateCheckout();
   </script>
+
 </body>
 </html>
